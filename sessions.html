@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sessions &amp; Fees · Hilze Strauss · Conscious Relationships</title>
+<meta name="description" content="Imago sessions in Namibia: the 15-hour intensive, an observed one-hour session, or a private one-hour session.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef;
+  --bg-alt:#f4eadb;
+  --bg-sage:#e9eef2;
+  --card:#fffcf7;
+  --primary:#46637b;
+  --primary-2:#3a5468;
+  --sage:#a9bfd2;
+  --sage-light:#dfe7ee;
+  --ochre:#e5bd7c;
+  --accent:#b07a4c;
+  --accent-dark:#94623a;
+  --ink:#2f3439;
+  --muted:#6f6b66;
+  --line:#e6dccb;
+  --serif:"Newsreader", Georgia, serif;
+  --sans:"Inter", system-ui, -apple-system, sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+p{color:var(--muted)}
+.accent{font-style:italic;color:var(--accent)}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:18px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:600;padding:13px 20px;border-radius:3px;border:1px solid var(--primary);cursor:pointer;transition:background .2s,color .2s}
+.btn-dark{background:var(--primary);color:#fff}
+.btn-dark:hover{background:var(--primary-2)}
+.btn-outline{background:transparent;color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-block{width:100%}
+
+header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.logo img{height:46px;width:auto}
+.logo .name{display:grid;line-height:1.1}
+.logo .name b{font-family:var(--serif);font-weight:400;font-size:21px;letter-spacing:.01em;color:var(--accent-dark)}
+.logo .name small{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:3px}
+.foot-logo{display:inline-flex;flex-direction:column;align-items:center}
+.foot-logo img{height:110px;width:auto}
+.foot-logo span{display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:6px;text-align:center}
+@media (max-width:520px){.logo img{height:38px}.logo .name b{font-size:18px}.logo .name small{font-size:8.5px;letter-spacing:.16em}}
+.nav-links{display:flex;align-items:center;white-space:nowrap;gap:28px;font-size:13px}
+.nav-links a.current{color:var(--accent-dark)}
+.nav-links a:not(.btn):hover{color:var(--accent-dark)}
+
+.intro{text-align:center;max-width:640px;margin:80px auto 0}
+.intro h1{font-size:clamp(40px,5.6vw,60px)}
+.intro h1 .accent{display:block}
+.intro p{margin-top:20px;font-size:16px}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;align-items:stretch}
+.col{display:flex;flex-direction:column}
+.card{background:var(--card);border:1px solid var(--line);padding:36px 30px;display:flex;flex-direction:column;flex:1;position:relative}
+.card.featured{border-color:#c9bfa9;box-shadow:0 24px 50px -30px rgba(40,55,70,.4)}
+.ribbon{position:absolute;top:-12px;left:30px;background:var(--primary);color:#fff;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.tag{align-self:flex-start;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--bg-alt);color:var(--muted);padding:6px 10px;border-radius:2px}
+.card h2{font-size:28px;margin:20px 0 10px}
+.card .desc{font-size:14px;min-height:66px}
+.duration{display:flex;align-items:center;gap:14px;margin:22px 0;padding:16px 18px;background:var(--bg-alt);border-left:3px solid var(--accent)}
+.duration .big{font-family:var(--serif);font-size:50px;line-height:.9;color:var(--accent-dark)}
+.duration strong{display:block;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.duration span.s{display:block;font-size:12.5px;line-height:1.45;color:var(--muted);margin-top:2px}
+.price{font-family:var(--serif);font-size:46px;line-height:1}
+.per{font-size:12px;color:var(--muted);margin-top:8px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.card ul{list-style:none;display:grid;gap:10px;margin:20px 0 30px;flex:1}
+.card li{display:flex;gap:12px;font-size:13.5px;color:var(--muted)}
+.card li::before{content:"✓";color:var(--accent)}
+
+/* Hourly rate, under each card */
+.rate{margin-top:14px;padding:18px 20px;border:1px dashed #d6cdb9;border-radius:4px;background:transparent}
+.rate .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.rate .k{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.rate .v{font-family:var(--serif);font-size:26px;line-height:1}
+.rate .v small{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:3px}
+.rate .calc{font-size:12px;color:var(--muted);margin-top:4px}
+.bar{height:6px;background:var(--bg-alt);border-radius:6px;margin-top:12px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--accent);border-radius:6px}
+.featured-col .bar span{background:var(--primary)}
+.save{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:var(--primary);background:var(--bg-sage);padding:4px 10px;border-radius:20px}
+
+.note{max-width:900px;margin:44px auto 0;background:var(--card);border-left:3px solid var(--accent);padding:20px 26px;font-size:13.5px;color:var(--muted)}
+.note strong{color:var(--ink)}
+.fineprint{text-align:center;font-size:12px;color:var(--muted);margin:22px auto 0;max-width:700px}
+
+.cta{background:var(--primary);color:#f4f1ea;margin-top:100px;padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(30px,4vw,44px);color:#f4f1ea}
+.cta h2 .accent{color:#ecc98f}
+.cta p{color:rgba(255,255,255,.75);margin:16px auto 30px;max-width:480px}
+.cta .btn{background:#f4f1ea;color:var(--primary);border-color:#f4f1ea}
+.cta .btn:hover{background:#fff}
+.cta svg.rings{position:absolute;right:-120px;top:-120px;width:420px;height:420px;opacity:.12;pointer-events:none}
+
+footer{border-top:1px solid var(--line);padding:30px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.foot nav{display:flex;gap:22px}
+.foot nav a{text-decoration:underline;text-underline-offset:3px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+@media (max-width:960px){
+  .nav-links a:not(.btn){display:none}
+  .cards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto;gap:44px}
+  .card .desc{min-height:0}
+  .intro{margin-top:56px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Hilze Strauss, Conscious Relationships, home">
+      <img src="images/logo-mark.png" alt="" width="94" height="46">
+      <span class="name"><b>Hilze Strauss</b><small>Conscious Relationships</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#intensive">The Intensive</a>
+      <a href="sessions.html" class="current">Sessions</a>
+      <a href="space.html">The Space</a>
+      <a href="index.html#online">Online Intensive</a>
+      <a href="index.html#enquire" class="btn btn-dark" style="padding:10px 16px">Enquire ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro reveal">
+    <p class="eyebrow">Individual sessions · Namibia</p>
+    <h1>Choose the time <span class="accent">that suits you.</span></h1>
+    <p>Begin with a single session, or set aside 15 hours for the full intensive. Each option offers the same care, the same approach and the same therapist.</p>
+  </div>
+
+  <div class="cards">
+    <!-- 1. INTENSIVE -->
+    <div class="col featured-col reveal">
+      <article class="card featured">
+        <span class="ribbon">Best value</span>
+        <span class="tag">Fully private · 15 hours</span>
+        <h2>The Intensive</h2>
+        <p class="desc">Our complete in-person Imago Couples Intensive, with only you, your partner and the therapist present.</p>
+        <div class="duration">
+          <span class="big">15</span>
+          <div><strong>Hours of sessions</strong><span class="s">One-hour Clarity Session free. No obligations. No pressure to continue.</span></div>
+        </div>
+        <div class="price">R16,999</div>
+        <div class="per">complete 15-hour intensive</div>
+        <ul>
+          <li>15 hours of dedicated Imago sessions</li>
+          <li>Only you, your partner and the therapist</li>
+          <li>Personalised, facilitated dialogue</li>
+          <li>Held in person in Namibia</li>
+        </ul>
+        <a href="index.html?interest=inperson#enquire" class="btn btn-dark btn-block">Enquire About the Intensive ↗</a>
+      </article>
+      <div class="rate">
+        <div class="row"><span class="k">Hourly rate</span><span class="v">R1,133<small>/ hour</small></span></div>
+        <p class="calc">R16,999 ÷ 15 hours = R1,133.27</p>
+        <div class="bar" aria-hidden="true"><span style="width:37.8%"></span></div>
+        <span class="save">R1,867 less per hour than a private session</span>
+      </div>
+    </div>
+
+    <!-- 2. OBSERVED SESSION -->
+    <div class="col reveal">
+      <article class="card">
+        <span class="tag">With an observer · 1 hour</span>
+        <h2>Observed Session</h2>
+        <p class="desc">A one-hour session with a therapist-in-training quietly present to observe, as part of their professional training.</p>
+        <div class="duration">
+          <span class="big">1</span>
+          <div><strong>Hour session</strong><span class="s">Led by the same therapist</span></div>
+        </div>
+        <div class="price">R2,000</div>
+        <div class="per">per one-hour session</div>
+        <ul>
+          <li>One-hour Imago session</li>
+          <li>A therapist-in-training observes only</li>
+          <li>Observation only with your informed consent</li>
+          <li>The observer is bound by confidentiality</li>
+        </ul>
+        <a href="index.html?interest=observed#enquire" class="btn btn-outline btn-block">Enquire About an Observed Session ↗</a>
+      </article>
+      <div class="rate">
+        <div class="row"><span class="k">Hourly rate</span><span class="v">R2,000<small>/ hour</small></span></div>
+        <p class="calc">R2,000 ÷ 1 hour = R2,000</p>
+        <div class="bar" aria-hidden="true"><span style="width:66.7%"></span></div>
+      </div>
+    </div>
+
+    <!-- 3. PRIVATE SESSION -->
+    <div class="col reveal">
+      <article class="card">
+        <span class="tag">Fully private · 1 hour</span>
+        <h2>Private Session</h2>
+        <p class="desc">A one-hour session with only you, your partner and the therapist in the room.</p>
+        <div class="duration">
+          <span class="big">1</span>
+          <div><strong>Hour session</strong><span class="s">Complete privacy throughout</span></div>
+        </div>
+        <div class="price">R3,000</div>
+        <div class="per">per one-hour session</div>
+        <ul>
+          <li>One-hour Imago session</li>
+          <li>Only you, your partner and the therapist</li>
+          <li>Book a single session or several</li>
+          <li>Maximum privacy</li>
+        </ul>
+        <a href="index.html?interest=private#enquire" class="btn btn-outline btn-block">Enquire About a Private Session ↗</a>
+      </article>
+      <div class="rate">
+        <div class="row"><span class="k">Hourly rate</span><span class="v">R3,000<small>/ hour</small></span></div>
+        <p class="calc">R3,000 ÷ 1 hour = R3,000</p>
+        <div class="bar" aria-hidden="true"><span style="width:100%"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note reveal">
+    <strong>A note about the observed session:</strong> Your session remains centred on you. The therapist-in-training is present for professional learning, not to lead or take part. The therapist will explain the observer's role, confidentiality and consent before you agree, and you are always free to choose a private session instead.
+  </div>
+  <p class="fineprint">Hourly rates are worked out from the fee divided by the hours of sessions. Availability and booking terms will be confirmed by the therapist before booking.</p>
+</main>
+
+<section class="cta">
+  <svg class="rings" viewBox="0 0 300 300" fill="none" stroke="#fff" aria-hidden="true"><circle cx="150" cy="150" r="140"/><circle cx="180" cy="130" r="100"/></svg>
+  <div class="wrap">
+    <h2>Not sure which <span class="accent">is right for you?</span></h2>
+    <p>Send a short enquiry and the therapist will help you choose. No obligations. No pressure.</p>
+    <a href="index.html#enquire" class="btn">Ask a Question ↗</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="foot-logo" aria-label="Hilze Strauss, Conscious Relationships, home">
+      <img src="images/logo-full.png" alt="Hilze Strauss" width="126" height="96">
+      <span>Conscious Relationships</span>
+    </a>
+    <span>Imago Couples Intensives · Namibia & online</span>
+    <nav>
+      <a href="index.html#in-person">In-person</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="space.html">The Space</a>
+      <a href="index.html#enquire">Enquire</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: .1 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hilze Strauss · Conscious Relationships · Imago Couples Intensives, Namibia</title>
+<meta name="description" content="Imago Couples Intensives in Namibia and online. Dedicated, therapist-facilitated time for you and your partner to reconnect.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef;
+  --bg-alt:#f4eadb;
+  --bg-sage:#e9eef2;
+  --card:#fffcf7;
+  --primary:#46637b;
+  --primary-2:#3a5468;
+  --sage:#a9bfd2;
+  --sage-light:#dfe7ee;
+  --ochre:#e5bd7c;
+  --accent:#b07a4c;
+  --accent-dark:#94623a;
+  --ink:#2f3439;
+  --muted:#6f6b66;
+  --line:#e6dccb;
+  --serif:"Newsreader", Georgia, serif;
+  --sans:"Inter", system-ui, -apple-system, sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(46px,7vw,76px)}
+h2{font-size:clamp(34px,4.6vw,52px)}
+h3{font-size:24px}
+em.accent,.accent{font-style:italic;color:var(--accent)}
+p{color:var(--muted)}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::before{display:none}
+section{padding:110px 0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:600;padding:13px 20px;border-radius:3px;border:1px solid var(--primary);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-dark{background:var(--primary);color:#fff}
+.btn-dark:hover{background:var(--primary-2)}
+.btn-outline{background:transparent;color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-block{width:100%}
+.btn .arr{font-size:12px}
+
+/* Nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.nav.scrolled{border-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.logo img{height:46px;width:auto}
+.logo .name{display:grid;line-height:1.1}
+.logo .name b{font-family:var(--serif);font-weight:400;font-size:21px;letter-spacing:.01em;color:var(--accent-dark)}
+.logo .name small{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:3px}
+.foot-logo{display:inline-flex;flex-direction:column;align-items:center}
+.foot-logo img{height:110px;width:auto}
+.foot-logo span{display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:6px;text-align:center}
+@media (max-width:520px){.logo img{height:38px}.logo .name b{font-size:18px}.logo .name small{font-size:8.5px;letter-spacing:.16em}}
+.nav-links{display:flex;align-items:center;white-space:nowrap;gap:26px;font-size:13px}
+.nav-links a:not(.btn){color:var(--ink);opacity:.85}
+.nav-links a:not(.btn):hover{opacity:1;color:var(--accent-dark)}
+.nav-ctas{display:flex;gap:10px;margin-left:10px}
+.nav-ctas .btn{padding:10px 16px}
+.menu-toggle{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--primary);margin:5px auto;transition:transform .2s,opacity .2s}
+
+/* Hero */
+.hero{padding:70px 0 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;min-height:560px}
+.hero h1 .accent{display:block}
+.hero-lede{margin:26px 0 30px;font-size:16px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{margin-top:22px;font-size:12px}
+.hero-art{position:relative;height:100%;min-height:560px;margin-right:-24px}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-caption{position:absolute;right:6%;bottom:28px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#fff;opacity:.85}
+
+/* Experience */
+.lead{max-width:560px;margin-top:22px;font-size:15px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:70px}
+.three .item{border-top:1px solid var(--line);padding-top:24px}
+.three .num{font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.three h3{margin:18px 0 10px}
+.three p{font-size:14px}
+
+/* Dark statement */
+.statement{background:var(--primary);color:#fff;position:relative;overflow:hidden;padding:130px 0}
+.statement .eyebrow{color:#efd3a4}
+.statement h2{font-size:clamp(38px,5.4vw,62px);max-width:780px;color:#f4f1ea}
+.statement h2 .accent{display:block;color:#ecc98f}
+.statement p{color:rgba(255,255,255,.75);max-width:520px;margin-top:30px}
+.statement .rings{position:absolute;right:-180px;top:-60px;width:760px;height:760px;pointer-events:none}
+.statement .wrap{position:relative;padding-left:max(24px,8%)}
+
+/* Approach */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.split .copy p{margin-top:20px}
+.checks{list-style:none;margin-top:30px;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;font-size:14px;color:var(--muted)}
+.checks li::before{content:"✓";color:var(--accent);font-weight:600}
+.checks strong{color:var(--ink);font-weight:600}
+
+/* Pricing */
+.pricing{background:var(--bg-sage)}
+.section-head{text-align:center;max-width:620px;margin:0 auto}
+.section-head p{margin-top:20px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:60px auto 0;max-width:900px}
+.hours{display:flex;align-items:center;gap:16px;margin:26px 0 4px;padding:18px 20px;background:var(--bg-alt);border-left:3px solid var(--accent)}
+.online-card .hours{background:var(--card);margin:0 0 26px}
+.hours .big{font-family:var(--serif);font-size:58px;line-height:.9;color:var(--accent-dark)}
+.hours .lbl{font-size:12px;line-height:1.45;color:var(--muted)}
+.hours .lbl strong{display:block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.cards.single{grid-template-columns:1fr;max-width:520px}
+.card{background:var(--card);padding:40px 36px;border:1px solid var(--line);display:flex;flex-direction:column}
+.card.featured{border-color:#c9bfa9;box-shadow:0 20px 40px -30px rgba(40,55,70,.35)}
+.tag{align-self:flex-start;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--bg-alt);color:var(--muted);padding:6px 10px;border-radius:2px}
+.card h3{margin:22px 0 12px;font-size:28px}
+.card .desc{font-size:14px;min-height:46px}
+.price{font-family:var(--serif);font-size:46px;color:var(--ink);margin-top:26px;line-height:1}
+.per{font-size:12px;color:var(--muted);margin-top:8px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.card ul{list-style:none;display:grid;gap:10px;margin:22px 0 34px;flex:1}
+.card li{font-size:13.5px;color:var(--muted);display:flex;gap:12px}
+.card li::before{content:"✓";color:var(--accent)}
+.note{max-width:900px;margin:34px auto 0;background:var(--card);border-left:3px solid var(--accent);padding:20px 26px;font-size:13.5px;color:var(--muted)}
+.note strong{color:var(--ink)}
+.fineprint{text-align:center;font-size:12px;color:var(--muted);margin-top:24px}
+
+/* Online */
+.online .split{align-items:center;gap:80px}
+.online .copy p{margin-top:18px}
+.online .copy strong{color:var(--ink)}
+.online .copy .btn{margin-top:30px}
+.online-card{background:var(--bg-sage);padding:46px 42px}
+.online-card .kicker{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.online-card h3{font-size:30px;margin:16px 0 22px}
+.online-card .price{margin-top:0}
+.online-card .per{border-color:rgba(0,0,0,.08)}
+.steps{list-style:none;margin:10px 0 30px}
+.steps li{display:grid;grid-template-columns:44px 1fr;padding:22px 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.steps .n{font-size:12px;font-weight:600;color:var(--accent-dark)}
+.steps strong{display:block;color:var(--ink);font-size:14px;font-weight:600;margin-bottom:4px}
+.steps .pill{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--card);padding:5px 10px;margin-bottom:10px;color:var(--ink)}
+.steps p{font-size:13.5px}
+.online-card .small{font-size:11.5px;margin-top:16px}
+
+/* Reach / world map */
+.reach{--blue:var(--primary);padding-top:40px}
+.reach .eyebrow{color:var(--blue)}
+.reach .eyebrow::before{display:none}
+.reach-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.reach-head h2 .accent{display:block;color:var(--blue)}
+.reach-head p{max-width:300px;text-align:right;font-size:14px}
+.worldmap{position:relative;margin-top:40px;aspect-ratio:1672/941}
+.worldmap img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.worldmap .fallback{position:absolute;inset:6% 4%;border:1px dashed var(--line);display:grid;place-items:center;font-size:12px;color:var(--muted);text-align:center;padding:20px}
+.worldmap .arcs{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.worldmap .arcs path{fill:none;stroke:var(--blue);stroke-width:2.2;stroke-dasharray:5 7;opacity:.8}
+.pin{position:absolute;left:var(--x);top:var(--y);width:0;height:0}
+.pin::before{content:"";position:absolute;width:18px;height:18px;left:-9px;top:-9px;border-radius:50%;border:1.5px solid var(--blue);background:rgba(255,252,247,.9)}
+.pin::after{content:"";position:absolute;width:6px;height:6px;left:-3px;top:-3px;border-radius:50%;background:var(--blue)}
+.pin span{position:absolute;top:0;transform:translateY(-50%);white-space:nowrap;background:#fff;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);box-shadow:0 6px 18px -8px rgba(30,40,50,.35)}
+.pin span i{font-family:var(--serif);font-weight:400;letter-spacing:0;text-transform:none;color:var(--blue);margin-right:6px;font-size:13px}
+.pin.r span{left:18px}
+.pin.l span{right:18px}
+.regions{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:30px;margin-top:40px;border-top:1px solid var(--line);padding-top:30px}
+.regions li{display:grid;grid-template-columns:auto 1fr;column-gap:12px}
+.regions i{font-family:var(--serif);color:var(--blue);font-size:15px;padding-top:6px}
+.regions strong{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;display:block}
+.regions span{grid-column:2;font-size:13px;color:var(--muted);margin-top:6px;line-height:1.55}
+@media (max-width:960px){
+  .reach-head p{text-align:left}
+  .regions{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .pin span{padding:4px 9px;font-size:9px;letter-spacing:.1em}
+  .pin span b{display:none}
+  .pin span i{margin:0}
+  .regions{grid-template-columns:1fr}
+}
+
+/* FAQ */
+.faq{border-top:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.faq-grid .copy p{margin-top:22px}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:24px 0;font-size:14.5px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:20px;line-height:1;color:var(--muted);transition:transform .2s}
+details[open] summary::after{content:"–"}
+details p{font-size:14px;padding:0 40px 26px 0}
+
+/* Enquire */
+.enquire{background:var(--bg-sage)}
+.form{display:grid;gap:20px}
+.form label{display:grid;gap:8px;font-size:12px;font-weight:600;color:var(--ink)}
+.form label span.opt{font-weight:400;color:var(--muted)}
+.form input,.form select,.form textarea{font:inherit;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:3px;padding:13px 14px;width:100%;transition:border-color .2s}
+.form textarea{min-height:120px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--primary)}
+.form .small{font-size:11.5px}
+.output{display:none;background:var(--card);border:1px solid var(--line);padding:20px;margin-top:6px}
+.output.show{display:block}
+.output textarea{min-height:180px;font-size:13px}
+.output .row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+
+/* Footer */
+footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.foot nav{display:flex;gap:22px}
+.foot nav a{text-decoration:underline;text-underline-offset:3px}
+.foot nav a:hover{color:var(--ink)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* Responsive */
+@media (max-width:960px){
+  .nav-links{position:fixed;inset:80px 0 auto 0;background:var(--bg);flex-direction:column;align-items:flex-start;gap:18px;padding:28px 24px 34px;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .3s;z-index:-1}
+  .nav-links.open{transform:none}
+  .nav-ctas{margin-left:0}
+  .menu-toggle{display:block}
+  .menu-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .menu-toggle.open span:nth-child(2){opacity:0}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  .hero-grid,.split,.faq-grid,.cards{grid-template-columns:1fr}
+  .hero-art{min-height:380px;margin:40px -24px 0}
+  .split,.faq-grid{gap:50px}
+  .approach .art{order:-1}
+  .three{grid-template-columns:1fr;gap:30px}
+  section{padding:80px 0}
+}
+@media (max-width:520px){
+  .card,.online-card{padding:32px 24px}
+  .statement{padding:90px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Hilze Strauss, Conscious Relationships, home">
+      <img src="images/logo-mark.png" alt="" width="94" height="46">
+      <span class="name"><b>Hilze Strauss</b><small>Conscious Relationships</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#intensive">The Intensive</a>
+      <a href="#approach">Our Approach</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="space.html">The Space</a>
+      <a href="#online">Online Intensive</a>
+      <div class="nav-ctas">
+        <a href="#in-person" class="btn btn-outline">In-person <span class="arr">↗</span></a>
+        <a href="#online" class="btn btn-dark">Online <span class="arr">↗</span></a>
+      </div>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Imago Couples Intensives · Namibia</p>
+      <h1>Find your way <span class="accent">back to each other.</span></h1>
+      <p class="hero-lede">A dedicated space for you and your partner to reconnect.</p>
+      <div class="hero-ctas">
+        <a href="#in-person" class="btn btn-dark">In-person Intensive <span class="arr">↗</span></a>
+        <a href="#online" class="btn btn-outline">Online Intensive <span class="arr">↗</span></a>
+      </div>
+      <p class="hero-note">One couple. 15 hours of dedicated therapeutic guidance. Intentional time together.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 640 560" preserveAspectRatio="xMidYMid slice">
+        <polygon points="120,560 330,0 640,0 640,560" fill="#e8eef3"/>
+        <path d="M200 470 V260 A150 150 0 0 1 500 260 V470 Z" fill="#a8c0d6"/>
+        <path d="M300 560 C295 360 370 175 515 160 C610 150 650 280 615 395 C585 495 500 560 420 560 Z" fill="#e6c08f"/>
+        <circle cx="420" cy="285" r="165" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1"/>
+        <circle cx="470" cy="250" r="118" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1"/>
+        <circle cx="418" cy="262" r="3.5" fill="#fff"/>
+      </svg>
+      <span class="hero-caption">Connection begins with understanding</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="intensive">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">The Experience</p>
+      <h2>More than another<br>conversation.</h2>
+      <p class="lead">When a relationship feels stuck, the usual ways of talking can leave both people feeling unheard. An Imago Couples Intensive offers focused time with a therapist to explore your patterns and practise new ways of listening and responding.</p>
+    </div>
+    <div class="three">
+      <div class="item reveal">
+        <span class="num">01 / Space</span>
+        <h3>15 hours set aside</h3>
+        <p>Step away from the noise of everyday life and give your relationship 15 hours of the attention it deserves.</p>
+      </div>
+      <div class="item reveal">
+        <span class="num">02 / Understanding</span>
+        <h3>Be heard differently</h3>
+        <p>Explore the patterns beneath recurring disagreements in a supported and structured setting.</p>
+      </div>
+      <div class="item reveal">
+        <span class="num">03 / Connection</span>
+        <h3>Move forward together</h3>
+        <p>Practise skills designed to foster curiosity, empathy and more meaningful connection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REACH / WORLD MAP -->
+<section class="reach" id="reach">
+  <div class="wrap">
+    <div class="reach-head reveal">
+      <div>
+        <p class="eyebrow">Where I've worked</p>
+        <h2>Connection, <span class="accent">across continents</span></h2>
+      </div>
+      <p>Five countries, one way of working: helping people find their way back to each other.</p>
+    </div>
+
+    <div class="worldmap reveal" role="img" aria-label="Watercolour world map marking Namibia, South Africa, the United States, the United Kingdom and the Netherlands">
+      <div class="fallback">Watercolour map goes here<br>(save it as images/world-map.jpg)</div>
+      <img src="images/world-map.jpg" alt="" onerror="this.style.display='none'" onload="this.previousElementSibling.style.display='none'">
+      <!-- Dashed routes from Namibia. Coordinates match the 1672×941 map image. -->
+      <svg class="arcs" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M858 612 Q 520 300 262 345"/>
+        <path d="M858 612 Q 730 420 778 240"/>
+        <path d="M858 612 Q 900 420 806 256"/>
+        <path d="M858 612 Q 890 625 905 640"/>
+      </svg>
+      <!-- Pin positions: --x and --y as a percentage of the map. Nudge these to fine-tune. -->
+      <div class="pin l" style="--x:51.3%;--y:65%"><span><i>01</i><b>Namibia</b></span></div>
+      <div class="pin l" style="--x:51.8%;--y:73.4%"><span><i>02</i><b>Cape Town</b></span></div>
+      <div class="pin r" style="--x:54.1%;--y:68%"><span><i>02</i><b>Johannesburg</b></span></div>
+      <div class="pin l" style="--x:15.7%;--y:36.7%"><span><i>03</i><b>Los Angeles</b></span></div>
+      <div class="pin l" style="--x:46.5%;--y:25.5%"><span><i>04</i><b>United Kingdom</b></span></div>
+      <div class="pin r" style="--x:48.2%;--y:27.2%"><span><i>05</i><b>Netherlands</b></span></div>
+    </div>
+
+    <ul class="regions">
+      <li class="reveal"><i>01</i><strong>Namibia</strong><span>Windhoek, Walvis Bay and Swakopmund</span></li>
+      <li class="reveal"><i>02</i><strong>South Africa</strong><span>Cape Town, Stellenbosch, Johannesburg and Potchefstroom</span></li>
+      <li class="reveal"><i>03</i><strong>United States</strong><span>Los Angeles, California</span></li>
+      <li class="reveal"><i>04</i><strong>United Kingdom</strong><span>Clients based in the UK</span></li>
+      <li class="reveal"><i>05</i><strong>Netherlands</strong><span>[City or clients in the Netherlands]</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <svg class="rings" viewBox="0 0 760 760" fill="none" aria-hidden="true">
+    <circle cx="380" cy="380" r="300" fill="#e5bd7c" fill-opacity=".07"/>
+    <circle cx="250" cy="520" r="190" fill="#8fadc6" fill-opacity=".08"/>
+    <circle cx="430" cy="340" r="250" stroke="#fff" stroke-opacity=".12"/>
+    <circle cx="330" cy="420" r="200" stroke="#fff" stroke-opacity=".09"/>
+  </svg>
+  <div class="wrap reveal">
+    <p class="eyebrow">A different way to connect</p>
+    <h2>It is not about winning the argument. <span class="accent">It is about understanding the person.</span></h2>
+    <p>The Imago Dialogue is built around three simple practices: mirroring what you hear, validating your partner's experience, and responding with empathy.</p>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="wrap split">
+    <div class="art reveal" aria-hidden="true">
+      <svg viewBox="0 0 500 460">
+        <rect width="500" height="460" fill="#f1eee7"/>
+        <path d="M40 460 V220 A150 150 0 0 1 340 220 V460 Z" fill="#f0eadd" opacity=".0"/>
+        <path d="M0 460 V250 A150 150 0 0 1 300 250 V460 Z" fill="#fbf4e7"/>
+        <path d="M55 460 V250 A115 115 0 0 1 285 250 V460 Z" fill="#8fadc6"/>
+        <path d="M210 460 V300 A120 120 0 0 1 450 300 V460 Z" fill="#e6c08f"/>
+        <line x1="210" y1="120" x2="210" y2="460" stroke="#fff" stroke-opacity=".7"/>
+      </svg>
+    </div>
+    <div class="copy reveal">
+      <p class="eyebrow">The Imago Approach</p>
+      <h2>Understand the patterns. Rediscover the connection.</h2>
+      <p>Imago Relationship Therapy, developed by Harville Hendrix and Helen LaKelly Hunt, invites couples to look beneath the surface of conflict and become curious about one another's inner worlds.</p>
+      <p>During your intensive, the therapist facilitates purposeful dialogue and helps you approach difficult conversations with greater care and understanding.</p>
+      <ul class="checks">
+        <li><span><strong>Mirroring</strong> — listening and reflecting what you hear.</span></li>
+        <li><span><strong>Validation</strong> — recognising your partner's perspective.</span></li>
+        <li><span><strong>Empathy</strong> — making room for your partner's feelings.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="in-person">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow center">Your Intensive</p>
+      <h2>Your in-person Intensive.</h2>
+      <p>Meet with your therapist in person in Namibia for a private intensive of 15 focused hours. Prefer to meet from home? An online Private Intensive is also available below.</p>
+    </div>
+    <div class="cards single">
+      <article class="card featured reveal">
+        <span class="tag">Fully private · In-person</span>
+        <h3>In-person Intensive</h3>
+        <p class="desc">An uninterrupted therapeutic setting for you, your partner and your therapist.</p>
+        <div class="hours"><span class="big">15</span><span class="lbl"><strong>Hours of sessions</strong>One-hour Clarity Session free. No obligations. No pressure to continue.</span></div>
+        <div class="price">R16,999</div>
+        <div class="per">per couple · complete 15-hour intensive</div>
+        <ul>
+          <li>One-hour Clarity Session free. No obligations. No pressure to continue.</li>
+          <li>15 hours of dedicated Imago Couples sessions</li>
+          <li>Only you, your partner and the therapist present</li>
+          <li>Personalised, facilitated dialogue</li>
+          <li>Held in person in Namibia</li>
+        </ul>
+        <a href="#enquire" class="btn btn-dark btn-block" data-interest="inperson">Enquire About the In-person Intensive <span class="arr">↗</span></a>
+        <a href="space.html" class="btn btn-outline btn-block" style="margin-top:10px">View the Space <span class="arr">↗</span></a>
+      </article>
+    </div>
+    <p class="fineprint">Fees shown are per couple, not per person. Session schedule, location, availability and booking terms will be confirmed by the therapist before booking.</p>
+  </div>
+</section>
+
+<!-- ONLINE -->
+<section class="online" id="online">
+  <div class="wrap split">
+    <div class="copy reveal">
+      <p class="eyebrow">Private Intensive · Online · Namibia</p>
+      <h2>Make space for your relationship, wherever you are.</h2>
+      <p>For couples who prefer to meet from home, the Online Private Intensive offers a structured programme of 15 hours of private sessions with the therapist.</p>
+      <p>It begins with a <strong>free one-hour Clarity Session</strong>: an opportunity to meet, discuss what you hope to work on, understand the process, and decide whether continuing feels right for both of you.</p>
+      <p><strong>No fee. No obligation. No pressure to continue.</strong></p>
+      <a href="#enquire" class="btn btn-outline" data-interest="online">Book Your Free Clarity Session <span class="arr">↗</span></a>
+    </div>
+    <aside class="online-card reveal">
+      <span class="kicker">One couple · Private online sessions</span>
+      <h3>Online Private Intensive</h3>
+      <div class="hours"><span class="big">15</span><span class="lbl"><strong>Hours of sessions</strong>One-hour Clarity Session free. No obligations. No pressure to continue.</span></div>
+      <div class="price">R41,000</div>
+      <div class="per">per couple · complete 15-hour intensive</div>
+      <ol class="steps">
+        <li><span class="n">01</span><div><span class="pill">Free Clarity Session · 1 hour</span><p>Meet your therapist and explore the next step together, with no payment or obligation to continue.</p></div></li>
+        <li><span class="n">02</span><div><strong>15 hours of guided online sessions</strong><p>If you both choose to proceed, continue privately with guided Imago conversations and relationship work.</p></div></li>
+        <li><span class="n">03</span><div><strong>16 hours with your therapist</strong><p>A free one-hour Clarity Session and the full 15-hour intensive.</p></div></li>
+      </ol>
+      <a href="#enquire" class="btn btn-dark btn-block" data-interest="online">Start With a Free Clarity Session <span class="arr">↗</span></a>
+      <p class="small">The R41,000 programme fee applies only if you choose to continue after the free Clarity Session. Scheduling and payment terms are confirmed before you commit.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="copy reveal">
+      <p class="eyebrow">Good to know</p>
+      <h2>Questions you might have.</h2>
+      <p>Taking time for your relationship is a meaningful decision. Here is what to know before you enquire.</p>
+    </div>
+    <div class="reveal">
+      <details open>
+        <summary>What is an Imago Couples Intensive?</summary>
+        <p>It is focused, therapist-facilitated time for one couple. Rather than a group workshop, the attention is on your relationship, your conversations, and the patterns you want to understand or change.</p>
+      </details>
+      <details>
+        <summary>What is the difference between in-person and online?</summary>
+        <p>The therapeutic approach is the same. The in-person intensive takes place in Namibia, while the online intensive lets you meet from home. Both begin with a free one-hour Clarity Session and are packaged as 15 hours of sessions.</p>
+      </details>
+      <details>
+        <summary>What about privacy and confidentiality?</summary>
+        <p>What you share stays within the therapeutic setting. Your therapist will explain confidentiality, record-keeping and any limits to confidentiality before you begin.</p>
+      </details>
+      <details>
+        <summary>Is the Clarity Session really free?</summary>
+        <p>Yes. The one-hour Clarity Session comes before your 15 hours and costs nothing. It is simply a chance to meet the therapist and see whether the intensive feels right. There is no obligation to continue, and the fee applies only if you both choose to go ahead.</p>
+      </details>
+      <details>
+        <summary>How long is the Intensive?</summary>
+        <p>Both the in-person and online intensives are packaged as 15 hours of sessions, after a free one-hour Clarity Session, so 16 hours with your therapist in total. How those hours are scheduled is confirmed with the therapist before booking.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE -->
+<section class="enquire" id="enquire">
+  <div class="wrap split" style="align-items:start">
+    <div class="copy reveal">
+      <p class="eyebrow">Begin the conversation</p>
+      <h2>A meaningful next step, together.</h2>
+      <p>Enquire about available dates or ask a question about the Couples Intensive. You do not need to share sensitive relationship details in this initial enquiry.</p>
+      <p>This enquiry prototype prepares a message for you to copy. A real booking form can be connected once the therapist's contact details and booking process are supplied.</p>
+    </div>
+    <form class="form reveal" id="enquiryForm" novalidate>
+      <label>Your name
+        <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+      </label>
+      <label>Email address
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      </label>
+      <label>Interested in
+        <select name="interest" id="interest">
+          <option value="unsure">I'm not sure yet</option>
+          <option value="inperson">In-person Intensive · R16,999</option>
+          <option value="online">Online Private Intensive · R41,000</option>
+          <option value="observed">Observed Session (1 hour) · R2,000</option>
+          <option value="private">Private Session (1 hour) · R3,000</option>
+        </select>
+      </label>
+      <label>Anything else? <span class="opt">(optional)</span>
+        <textarea name="message" placeholder="Preferred dates or a practical question. Please avoid sharing sensitive personal details here."></textarea>
+      </label>
+      <button type="submit" class="btn btn-dark btn-block">Prepare My Enquiry <span class="arr">↗</span></button>
+      <p class="small">Prototype only: no information is transmitted or stored. The form prepares text locally so you can copy and send it.</p>
+      <div class="output" id="output" aria-live="polite">
+        <textarea id="outputText" readonly aria-label="Your prepared enquiry"></textarea>
+        <div class="row">
+          <button type="button" class="btn btn-dark" id="copyBtn">Copy message</button>
+          <a class="btn btn-outline" id="mailBtn" hidden>Open in email ↗</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="foot-logo" aria-label="Hilze Strauss, Conscious Relationships, home">
+      <img src="images/logo-full.png" alt="Hilze Strauss" width="126" height="96">
+      <span>Conscious Relationships</span>
+    </a>
+    <span>Imago Couples Intensives · Namibia & online</span>
+    <nav>
+      <a href="#in-person">In-person</a>
+      <a href="#online">Online</a>
+      <a href="#reach">Reach</a>
+      <a href="#enquire">Enquire</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Set this to the therapist's email to enable the "Open in email" button.
+const ENQUIRY_EMAIL = "";
+
+// Sticky nav border
+const nav = document.querySelector("header.nav");
+addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), { passive: true });
+
+// Mobile menu
+const toggle = document.getElementById("menuToggle");
+const links = document.getElementById("navLinks");
+toggle.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  toggle.classList.toggle("open", open);
+  toggle.setAttribute("aria-expanded", open);
+});
+links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  links.classList.remove("open"); toggle.classList.remove("open"); toggle.setAttribute("aria-expanded", false);
+}));
+
+// Pre-select interest when an enquiry button is clicked
+document.querySelectorAll("[data-interest]").forEach(btn =>
+  btn.addEventListener("click", () => { document.getElementById("interest").value = btn.dataset.interest; })
+);
+
+// Pre-select interest when arriving from another page (e.g. index.html?interest=private#enquire)
+const qInterest = new URLSearchParams(location.search).get("interest");
+if (qInterest && document.querySelector(`#interest option[value="${qInterest}"]`)) {
+  document.getElementById("interest").value = qInterest;
+}
+
+// Scroll reveal
+const io = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// Enquiry form: prepares text locally, nothing is sent
+const form = document.getElementById("enquiryForm");
+const output = document.getElementById("output");
+const outText = document.getElementById("outputText");
+const mailBtn = document.getElementById("mailBtn");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const d = new FormData(form);
+  const name = (d.get("name") || "").trim();
+  const email = (d.get("email") || "").trim();
+  if (!name || !email) { form.reportValidity(); return; }
+  const interest = form.interest.options[form.interest.selectedIndex].text;
+  const msg = (d.get("message") || "").trim();
+  const text =
+`Hello,
+
+I would like to enquire about the Imago Couples Intensive.
+
+Name: ${name}
+Email: ${email}
+Interested in: ${interest}
+${msg ? "\n" + msg + "\n" : ""}
+Kind regards,
+${name}`;
+  outText.value = text;
+  output.classList.add("show");
+  if (ENQUIRY_EMAIL) {
+    mailBtn.hidden = false;
+    mailBtn.href = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent("Couples Intensive enquiry")}&body=${encodeURIComponent(text)}`;
+  }
+  output.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+document.getElementById("copyBtn").addEventListener("click", async e => {
+  try { await navigator.clipboard.writeText(outText.value); }
+  catch { outText.select(); document.execCommand("copy"); }
+  e.target.textContent = "Copied ✓";
+  setTimeout(() => (e.target.textContent = "Copy message"), 2000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Space · Hilze Strauss · Conscious Relationships</title>
+<meta name="description" content="A calm, private room for the in-person Imago Couples Intensive in Namibia.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef;
+  --bg-alt:#f4eadb;
+  --bg-sage:#e9eef2;
+  --card:#fffcf7;
+  --primary:#46637b;
+  --primary-2:#3a5468;
+  --sage:#a9bfd2;
+  --sage-light:#dfe7ee;
+  --ochre:#e5bd7c;
+  --accent:#b07a4c;
+  --accent-dark:#94623a;
+  --ink:#2f3439;
+  --muted:#6f6b66;
+  --line:#e6dccb;
+  --serif:"Newsreader", Georgia, serif;
+  --sans:"Inter", system-ui, -apple-system, sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+p{color:var(--muted)}
+.accent{font-style:italic;color:var(--accent)}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:16px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:600;padding:13px 20px;border-radius:3px;border:1px solid var(--primary);cursor:pointer;transition:background .2s,color .2s}
+.btn-dark{background:var(--primary);color:#fff}
+.btn-dark:hover{background:var(--primary-2)}
+.btn-outline{background:transparent;color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-block{width:100%}
+
+/* Nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.logo img{height:46px;width:auto}
+.logo .name{display:grid;line-height:1.1}
+.logo .name b{font-family:var(--serif);font-weight:400;font-size:21px;letter-spacing:.01em;color:var(--accent-dark)}
+.logo .name small{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:3px}
+.foot-logo{display:inline-flex;flex-direction:column;align-items:center}
+.foot-logo img{height:110px;width:auto}
+.foot-logo span{display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:6px;text-align:center}
+@media (max-width:520px){.logo img{height:38px}.logo .name b{font-size:18px}.logo .name small{font-size:8.5px;letter-spacing:.16em}}
+.nav-links{display:flex;align-items:center;white-space:nowrap;gap:28px;font-size:13px}
+.nav-links a.current{color:var(--accent-dark)}
+.nav-links a:not(.btn):hover{color:var(--accent-dark)}
+
+/* Title */
+.back{display:inline-flex;gap:8px;font-size:13px;color:var(--muted);margin:34px 0 22px}
+.back:hover{color:var(--ink)}
+.title-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+h1{font-size:clamp(36px,5vw,54px)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:14px;color:var(--muted)}
+.meta span{display:inline-flex;align-items:center;gap:7px}
+.meta span+span::before{content:"·";margin-right:11px;color:var(--line)}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:230px 230px;gap:10px;margin-top:30px;border-radius:16px;overflow:hidden;position:relative}
+.gallery .ph{position:relative;overflow:hidden;cursor:zoom-in;border:0;padding:0;background:var(--ph,#e8edf1)}
+.gallery .ph:first-child{grid-row:span 2}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease,filter .4s}
+.ph:hover img{transform:scale(1.03)}
+.ph .lbl{position:absolute;left:14px;bottom:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.92);text-shadow:0 1px 8px rgba(0,0,0,.25);pointer-events:none}
+.show-all{position:absolute;right:16px;bottom:16px;background:#fff;color:var(--ink);border:1px solid var(--ink);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;display:flex;gap:8px;align-items:center}
+.show-all:hover{background:var(--bg)}
+
+/* Layout */
+.listing{display:grid;grid-template-columns:1fr 360px;gap:80px;margin-top:50px;padding-bottom:100px}
+.block{padding:36px 0;border-bottom:1px solid var(--line)}
+.block:first-child{padding-top:0}
+.block:last-child{border-bottom:0}
+.block h2{font-size:30px;margin-bottom:18px}
+.block p+p{margin-top:14px}
+.host{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.host h2{font-size:26px;margin:0}
+.host p{font-size:14px;margin-top:6px}
+.avatar{width:58px;height:58px;flex:none;border-radius:50%;background:var(--bg-sage);display:grid;place-items:center;color:var(--primary)}
+.avatar svg{width:28px;height:28px}
+
+.highlights{display:grid;gap:24px}
+.hl{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start}
+.hl svg{width:26px;height:26px;color:var(--primary);margin-top:2px}
+.hl strong{display:block;font-weight:600;font-size:15px}
+.hl span{font-size:14px;color:var(--muted)}
+
+.amenities{display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;list-style:none}
+.amenities li{display:flex;gap:14px;align-items:center;font-size:14.5px}
+.amenities svg{width:22px;height:22px;flex:none;color:var(--primary)}
+
+.rhythm{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rhythm li{background:var(--card);border:1px solid var(--line);padding:20px 18px;border-radius:12px}
+.rhythm i{font-family:var(--serif);color:var(--accent-dark);font-size:15px}
+.rhythm strong{display:block;font-family:var(--serif);font-weight:400;font-size:20px;margin:6px 0 6px}
+.rhythm span{font-size:13px;color:var(--muted);line-height:1.55;display:block}
+
+.quote{background:var(--primary);color:#f4f1ea;border-radius:16px;padding:44px 40px;position:relative;overflow:hidden}
+.quote p{font-family:var(--serif);font-size:26px;line-height:1.35;color:#f4f1ea;max-width:520px;position:relative}
+.quote p em{color:#ecc98f}
+.quote svg{position:absolute;right:-80px;top:-80px;width:300px;height:300px;opacity:.12}
+
+.location{display:grid;grid-template-columns:1fr;gap:16px}
+.loc-card{background:var(--bg-sage);border-radius:12px;padding:26px;display:flex;gap:16px;align-items:center}
+.loc-card svg{width:28px;height:28px;color:var(--primary);flex:none}
+.loc-card strong{display:block;font-weight:600}
+.loc-card span{font-size:13.5px;color:var(--muted)}
+
+/* Booking card */
+.book{position:sticky;top:100px;align-self:start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 24px 50px -30px rgba(40,55,70,.35)}
+.book .price{font-family:var(--serif);font-size:34px;line-height:1}
+.book .per{font-size:13px;color:var(--muted);margin-top:6px}
+.book .hours{display:flex;align-items:center;gap:14px;margin:22px 0;padding:16px 18px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px}
+.book .big{font-family:var(--serif);font-size:48px;line-height:.9;color:var(--accent-dark)}
+.book .hours strong{display:block;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.book .hours span.s{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:2px}
+.book ul{list-style:none;display:grid;gap:10px;margin:0 0 24px;font-size:13.5px;color:var(--muted)}
+.book li{display:flex;gap:10px}
+.book li::before{content:"✓";color:var(--accent)}
+.book .small{font-size:12px;text-align:center;margin-top:14px}
+.book .alt{display:block;text-align:center;font-size:13px;margin-top:16px;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}
+
+/* Mobile bottom bar */
+.mbar{display:none}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(30,40,50,.94);display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lightbox.open{display:flex}
+.lightbox figure{max-width:1100px;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.lightbox .frame{width:100%;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lightbox .missing{width:min(800px,100%);aspect-ratio:3/2;border-radius:6px}
+.lightbox figcaption{color:rgba(255,255,255,.8);font-size:13px;letter-spacing:.08em}
+.lb-btn{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:20px;display:grid;place-items:center}
+.lb-btn:hover{background:rgba(255,255,255,.2)}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+
+footer{border-top:1px solid var(--line);padding:30px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.foot nav{display:flex;gap:22px}
+.foot nav a{text-decoration:underline;text-underline-offset:3px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.ph img{transition:none}}
+
+@media (max-width:960px){
+  .nav-links a:not(.btn){display:none}
+  .listing{grid-template-columns:1fr;gap:0;padding-bottom:120px}
+  .book{display:none}
+  .rhythm{grid-template-columns:1fr 1fr}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--card);border-top:1px solid var(--line);padding:14px 20px;justify-content:space-between;align-items:center;gap:16px}
+  .mbar .p{font-family:var(--serif);font-size:22px;line-height:1.1}
+  .mbar .s{font-size:12px;color:var(--muted)}
+}
+@media (max-width:720px){
+  .gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:12px;grid-template-rows:none;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .gallery::-webkit-scrollbar{display:none}
+  .gallery .ph{flex:0 0 88%;height:300px;scroll-snap-align:center;border-radius:12px}
+  .show-all{display:none}
+  .amenities{grid-template-columns:1fr}
+  .lightbox{padding:70px 12px}
+  .lb-prev,.lb-next{top:auto;bottom:16px;transform:none}
+  .lb-prev{left:calc(50% - 56px)}.lb-next{right:calc(50% - 56px)}
+  .quote{padding:34px 26px}.quote p{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Hilze Strauss, Conscious Relationships, home">
+      <img src="images/logo-mark.png" alt="" width="94" height="46">
+      <span class="name"><b>Hilze Strauss</b><small>Conscious Relationships</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#intensive">The Intensive</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="space.html" class="current">The Space</a>
+      <a href="index.html#online">Online Intensive</a>
+      <a href="index.html#enquire" class="btn btn-dark" style="padding:10px 16px">Enquire ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <a href="index.html#in-person" class="back">← Back to the In-person Intensive</a>
+
+  <div class="title-row reveal">
+    <div>
+      <p class="eyebrow">The in-person space</p>
+      <h1>A quiet room to <span class="accent">slow down together.</span></h1>
+      <div class="meta">
+        <span>[Town], Namibia</span>
+        <span>One couple at a time</span>
+        <span>15 hours of sessions</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY: put your photos in images/ with these names, or change the src values -->
+  <div class="gallery reveal" id="gallery">
+    <button class="ph" style="--ph:linear-gradient(135deg,#dde7ef,#a3bcd2)" data-index="0" aria-label="View photo 1: The therapy room">
+      <img src="images/space-1.jpg" alt="The therapy room, softly lit with two armchairs facing each other" onerror="this.remove()">
+      <span class="lbl">The room</span>
+    </button>
+    <button class="ph" style="--ph:linear-gradient(135deg,#f1e0bf,#dbb57f)" data-index="1" aria-label="View photo 2: Seating">
+      <img src="images/space-2.jpg" alt="Comfortable seating with cushions and a throw" onerror="this.remove()">
+      <span class="lbl">Seating</span>
+    </button>
+    <button class="ph" style="--ph:linear-gradient(135deg,#f1eee7,#e4ebf0)" data-index="2" aria-label="View photo 3: Natural light">
+      <img src="images/space-3.jpg" alt="Morning light falling through a window" onerror="this.remove()">
+      <span class="lbl">Natural light</span>
+    </button>
+    <button class="ph" style="--ph:linear-gradient(135deg,#a8c0d6,#8fadc6)" data-index="3" aria-label="View photo 4: The garden">
+      <img src="images/space-4.jpg" alt="A quiet garden for breaks between sessions" onerror="this.remove()">
+      <span class="lbl">The garden</span>
+    </button>
+    <button class="ph" style="--ph:linear-gradient(135deg,#eccfae,#e6c08f)" data-index="4" aria-label="View photo 5: Tea corner">
+      <img src="images/space-5.jpg" alt="A tea corner with cups and a kettle" onerror="this.remove()">
+      <span class="lbl">Tea corner</span>
+    </button>
+    <button class="show-all" id="showAll" type="button">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="4" height="4" rx="1"/><rect x="6" y="1" width="4" height="4" rx="1"/><rect x="11" y="1" width="4" height="4" rx="1"/><rect x="1" y="6" width="4" height="4" rx="1"/><rect x="6" y="6" width="4" height="4" rx="1"/><rect x="11" y="6" width="4" height="4" rx="1"/><rect x="1" y="11" width="4" height="4" rx="1"/><rect x="6" y="11" width="4" height="4" rx="1"/><rect x="11" y="11" width="4" height="4" rx="1"/></svg>
+      Show all photos
+    </button>
+  </div>
+
+  <div class="listing">
+    <div>
+      <section class="block host reveal">
+        <div>
+          <h2>A private therapy room, held for the two of you</h2>
+          <p>Hosted by [Therapist name] · Certified Imago therapist</p>
+        </div>
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 27c0-7 3-12 7-12s7 5 7 12"/><path d="M16 27c0-5 2-8.5 4-8.5s4 3.5 4 8.5"/></svg>
+        </div>
+      </section>
+
+      <section class="block reveal">
+        <div class="highlights">
+          <div class="hl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M13 14.3c.9-.2 1.9-.3 3-.3 3.3 0 5 2.7 5 6"/></svg>
+            <div><strong>Only the two of you</strong><span>No waiting room, no other clients. The space is yours for the duration of your sessions.</span></div>
+          </div>
+          <div class="hl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div><strong>Unhurried time</strong><span>15 hours set aside, so conversations can unfold at their own pace.</span></div>
+          </div>
+          <div class="hl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21c-4-3-7-6.5-7-10.5C5 6.4 8.1 3 12 3s7 3.4 7 7.5C19 14.5 16 18 12 21z"/><path d="M12 21V9"/><path d="M12 13l3-3M12 16l-3-3"/></svg>
+            <div><strong>A calm, natural setting</strong><span>Soft light, quiet surroundings and room to breathe between sessions.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block reveal">
+        <h2>About the space</h2>
+        <p>Before anything is said, the room is designed to help you both settle. Two comfortable chairs face each other at an easy distance, the light is soft, and the world outside is kept at a gentle remove.</p>
+        <p>There are no clocks to watch and nothing you need to bring. Take a breath, pour a cup of tea, and let this be time that belongs only to your relationship.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2>What the space offers</h2>
+        <ul class="amenities">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><circle cx="15.5" cy="12" r=".8" fill="currentColor"/></svg>Private, closed-door room</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Natural light</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/><path d="M3 11h18v5H3zM5 16v3M19 16v3"/></svg>Comfortable seating for two</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>Tea, coffee and water</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 22V12M12 12c0-4 3-7 7-7 0 4-3 7-7 7zM12 15c0-3-2.2-5-5-5 0 3 2.2 5 5 5z"/></svg>Garden for quiet breaks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="8" width="18" height="9" rx="2"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M6 8l2-4h8l2 4"/></svg>Private parking</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10s3-3 9-3 9 3 9 3M6 13.5s2.2-2 6-2 6 2 6 2M9.5 17s1-1 2.5-1 2.5 1 2.5 1"/><path d="M4 4l16 16"/></svg>Phones-off, distraction-free</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 20V10l8-6 8 6v10z"/><path d="M10 20v-6h4v6"/></svg>Restroom on site</li>
+        </ul>
+      </section>
+
+      <section class="block reveal">
+        <h2>The rhythm of your time here</h2>
+        <ol class="rhythm">
+          <li><i>01</i><strong>Arrive</strong><span>A warm welcome, a cup of tea, no rush.</span></li>
+          <li><i>02</i><strong>Settle</strong><span>Time to land in the room and in yourselves.</span></li>
+          <li><i>03</i><strong>Dialogue</strong><span>Guided Imago conversations, held with care.</span></li>
+          <li><i>04</i><strong>Rest</strong><span>Breaks in the garden to breathe and reflect.</span></li>
+        </ol>
+      </section>
+
+      <section class="block reveal">
+        <div class="quote">
+          <svg viewBox="0 0 300 300" fill="none" stroke="#fff" aria-hidden="true"><circle cx="150" cy="150" r="140"/><circle cx="180" cy="130" r="100"/></svg>
+          <p>A space where you can stop defending, <em>and start listening.</em></p>
+        </div>
+      </section>
+
+      <section class="block reveal" id="location">
+        <h2>Where you'll be</h2>
+        <div class="loc-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <div><strong>[Town], Namibia</strong><span>The exact address is shared privately once your booking is confirmed.</span></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="book reveal" aria-label="Enquire about the in-person intensive">
+      <div class="price">R16,999</div>
+      <div class="per">per couple · complete 15-hour intensive</div>
+      <div class="hours">
+        <span class="big">15</span>
+        <div><strong>Hours of sessions</strong><span class="s">One-hour Clarity Session free. No obligations. No pressure to continue.</span></div>
+      </div>
+      <ul>
+        <li>Only you, your partner and the therapist</li>
+        <li>Personalised, facilitated Imago dialogue</li>
+        <li>Held in person in Namibia</li>
+      </ul>
+      <a href="index.html#enquire" class="btn btn-dark btn-block">Enquire About Dates ↗</a>
+      <p class="small">Enquiring is free and commits you to nothing.</p>
+      <a href="index.html#online" class="alt">Prefer to meet from home? See the online intensive</a>
+    </aside>
+  </div>
+</main>
+
+<div class="mbar">
+  <div><div class="p">R16,999</div><div class="s">per couple · 15 hours</div></div>
+  <a href="index.html#enquire" class="btn btn-dark">Enquire ↗</a>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close gallery">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <figure>
+    <div class="frame" id="lbFrame"></div>
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo">›</button>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="foot-logo" aria-label="Hilze Strauss, Conscious Relationships, home">
+      <img src="images/logo-full.png" alt="Hilze Strauss" width="126" height="96">
+      <span>Conscious Relationships</span>
+    </a>
+    <span>Imago Couples Intensives · Namibia & online</span>
+    <nav>
+      <a href="index.html#in-person">In-person</a>
+      <a href="index.html#online">Online</a>
+      <a href="space.html">The Space</a>
+      <a href="index.html#enquire">Enquire</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: .1 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// Lightbox
+const tiles = [...document.querySelectorAll("#gallery .ph")];
+const lb = document.getElementById("lightbox");
+const frame = document.getElementById("lbFrame");
+const cap = document.getElementById("lbCap");
+let current = 0, lastFocus = null;
+
+function render() {
+  const tile = tiles[current];
+  const img = tile.querySelector("img");
+  const label = tile.querySelector(".lbl").textContent;
+  frame.innerHTML = "";
+  if (img) {
+    const big = document.createElement("img");
+    big.src = img.src; big.alt = img.alt;
+    frame.appendChild(big);
+  } else {
+    const ph = document.createElement("div");
+    ph.className = "missing";
+    ph.style.background = getComputedStyle(tile).getPropertyValue("--ph");
+    frame.appendChild(ph);
+  }
+  cap.textContent = `${label}  ·  ${current + 1} / ${tiles.length}`;
+}
+function open(i) { lastFocus = document.activeElement; current = i; render(); lb.classList.add("open"); document.body.style.overflow = "hidden"; document.getElementById("lbClose").focus(); }
+function close() { lb.classList.remove("open"); document.body.style.overflow = ""; lastFocus && lastFocus.focus(); }
+function step(d) { current = (current + d + tiles.length) % tiles.length; render(); }
+
+tiles.forEach((t, i) => t.addEventListener("click", () => open(i)));
+document.getElementById("showAll").addEventListener("click", () => open(0));
+document.getElementById("lbClose").addEventListener("click", close);
+document.getElementById("lbPrev").addEventListener("click", () => step(-1));
+document.getElementById("lbNext").addEventListener("click", () => step(1));
+lb.addEventListener("click", e => { if (e.target === lb) close(); });
+addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") close();
+  if (e.key === "ArrowLeft") step(-1);
+  if (e.key === "ArrowRight") step(1);
+});
+// Swipe in lightbox
+let sx = null;
+lb.addEventListener("touchstart", e => sx = e.touches[0].clientX, { passive: true });
+lb.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1); sx = null; });
+</script>
+</body>
+</html>
