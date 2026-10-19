@@ -123,6 +123,17 @@ header.nav.scrolled{border-color:var(--line)}
 .hours .big{font-family:var(--serif);font-size:58px;line-height:.9;color:var(--accent-dark)}
 .hours .lbl{font-size:12px;line-height:1.45;color:var(--muted)}
 .hours .lbl strong{display:block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.tiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+.tier{display:block;border:1px solid var(--line);border-radius:4px;padding:14px 16px;background:var(--card);transition:border-color .2s}
+a.tier:hover{border-color:var(--primary)}
+.tier .days{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark)}
+.tier{min-width:0}
+.tier .amt{display:block;font-family:var(--serif);font-size:34px;line-height:1.1;color:var(--ink);margin-top:6px}
+.tier .hr{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.tier .hr b{color:var(--ink);font-weight:600}
+.rateline{font-size:12.5px;color:var(--muted);margin-top:8px}
+.rateline b{color:var(--ink);font-weight:600}
+@media (max-width:420px){.tiers{grid-template-columns:1fr}}
 .cards.single{grid-template-columns:1fr;max-width:520px}
 .card{background:var(--card);padding:40px 36px;border:1px solid var(--line);display:flex;flex-direction:column}
 .card.featured{border-color:#c9bfa9;box-shadow:0 20px 40px -30px rgba(40,55,70,.35)}
@@ -131,7 +142,7 @@ header.nav.scrolled{border-color:var(--line)}
 .card .desc{font-size:14px;min-height:46px}
 .price{font-family:var(--serif);font-size:46px;color:var(--ink);margin-top:26px;line-height:1}
 .per{font-size:12px;color:var(--muted);margin-top:8px;padding-bottom:22px;border-bottom:1px solid var(--line)}
-.card ul{list-style:none;display:grid;gap:10px;margin:22px 0 34px;flex:1}
+.card ul{list-style:none;display:grid;gap:10px;margin:22px 0 34px;flex:1;align-content:start}
 .card li{font-size:13.5px;color:var(--muted);display:flex;gap:12px}
 .card li::before{content:"✓";color:var(--accent)}
 .note{max-width:900px;margin:34px auto 0;background:var(--card);border-left:3px solid var(--accent);padding:20px 26px;font-size:13.5px;color:var(--muted)}
@@ -217,6 +228,15 @@ details p{font-size:14px;padding:0 40px 26px 0}
 .output textarea{min-height:180px;font-size:13px}
 .output .row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
 
+/* Booking teaser */
+.book-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px}
+.book-steps{list-style:none;margin-bottom:24px}
+.book-steps li{display:grid;grid-template-columns:40px 1fr;padding:16px 0;border-bottom:1px solid var(--line)}
+.book-steps li:first-child{padding-top:0}
+.book-steps span{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:17px}
+.book-steps strong{display:block;font-weight:600;font-size:14.5px}
+.book-steps p{font-size:13.5px;margin-top:2px}
+
 /* Footer */
 footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
@@ -249,6 +269,8 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
   .card,.online-card{padding:32px 24px}
   .statement{padding:90px 0}
 }
+.cur{font-family:var(--sans);font-size:.4em;font-weight:600;letter-spacing:.1em;vertical-align:.7em;margin-right:5px;color:var(--muted)}
+.amt,.price{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -267,7 +289,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
       <a href="#online">Online Intensive</a>
       <div class="nav-ctas">
         <a href="#in-person" class="btn btn-outline">In-person <span class="arr">↗</span></a>
-        <a href="#online" class="btn btn-dark">Online <span class="arr">↗</span></a>
+        <a href="book.html" class="btn btn-dark">View Availability <span class="arr">↗</span></a>
       </div>
     </nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -421,24 +443,27 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
     <div class="section-head reveal">
       <p class="eyebrow center">Your Intensive</p>
       <h2>Your in-person Intensive.</h2>
-      <p>Meet with your therapist in person in Namibia for a private intensive of 15 focused hours. Prefer to meet from home? An online Private Intensive is also available below.</p>
+      <p>Meet with your therapist in person in Namibia for a private intensive of 15 focused hours: NAD 14,999 from Monday to Wednesday, or NAD 22,999 from Thursday to Saturday. Prefer to meet from home? An online Private Intensive is also available below.</p>
     </div>
     <div class="cards single">
       <article class="card featured reveal">
         <span class="tag">Fully private · In-person</span>
         <h3>In-person Intensive</h3>
         <p class="desc">An uninterrupted therapeutic setting for you, your partner and your therapist.</p>
-        <div class="hours"><span class="big">15</span><span class="lbl"><strong>Hours of sessions</strong>One-hour Clarity Session free. No obligations. No pressure to continue.</span></div>
-        <div class="price">R16,999</div>
-        <div class="per">per couple · complete 15-hour intensive</div>
+        <div class="hours"><span class="big">15</span><span class="lbl"><strong>Hours of sessions</strong>Dedicated, focused time for your relationship</span></div>
+        <div class="tiers">
+          <a class="tier" href="book.html?session=inperson&amp;days=mw"><span class="days">Mon – Wed</span><span class="amt"><span class="cur">NAD</span>14,999</span><span class="hr"><b>NAD 1,000</b> / hour</span></a>
+          <a class="tier" href="book.html?session=inperson&amp;days=ts"><span class="days">Thu – Sat</span><span class="amt"><span class="cur">NAD</span>22,999</span><span class="hr"><b>NAD 1,533</b> / hour</span></a>
+        </div>
+        <div class="per">per couple · complete 15-hour intensive · hourly rate = fee ÷ 15 hours</div>
         <ul>
-          <li>One-hour Clarity Session free. No obligations. No pressure to continue.</li>
+          <li>Choose Monday – Wednesday or Thursday – Saturday</li>
           <li>15 hours of dedicated Imago Couples sessions</li>
           <li>Only you, your partner and the therapist present</li>
           <li>Personalised, facilitated dialogue</li>
           <li>Held in person in Namibia</li>
         </ul>
-        <a href="#enquire" class="btn btn-dark btn-block" data-interest="inperson">Enquire About the In-person Intensive <span class="arr">↗</span></a>
+        <a href="book.html?session=inperson" class="btn btn-dark btn-block">View Availability <span class="arr">↗</span></a>
         <a href="space.html" class="btn btn-outline btn-block" style="margin-top:10px">View the Space <span class="arr">↗</span></a>
       </article>
     </div>
@@ -455,21 +480,24 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
       <p>For couples who prefer to meet from home, the Online Private Intensive offers a structured programme of 15 hours of private sessions with the therapist.</p>
       <p>It begins with a <strong>free one-hour Clarity Session</strong>: an opportunity to meet, discuss what you hope to work on, understand the process, and decide whether continuing feels right for both of you.</p>
       <p><strong>No fee. No obligation. No pressure to continue.</strong></p>
-      <a href="#enquire" class="btn btn-outline" data-interest="online">Book Your Free Clarity Session <span class="arr">↗</span></a>
+      <a href="book.html?session=online" class="btn btn-outline">Book Your Free Clarity Session <span class="arr">↗</span></a>
     </div>
     <aside class="online-card reveal">
       <span class="kicker">One couple · Private online sessions</span>
       <h3>Online Private Intensive</h3>
       <div class="hours"><span class="big">15</span><span class="lbl"><strong>Hours of sessions</strong>One-hour Clarity Session free. No obligations. No pressure to continue.</span></div>
-      <div class="price">R41,000</div>
-      <div class="per">per couple · complete 15-hour intensive</div>
+      <div class="tiers" style="margin-top:0">
+        <a class="tier" href="book.html?session=online&amp;days=mw"><span class="days">Mon – Wed</span><span class="amt"><span class="cur">NAD</span>41,999</span><span class="hr"><b>NAD 2,800</b> / hour</span></a>
+        <a class="tier" href="book.html?session=online&amp;days=ts"><span class="days">Thu – Sat</span><span class="amt"><span class="cur">NAD</span>61,999</span><span class="hr"><b>NAD 4,133</b> / hour</span></a>
+      </div>
+      <div class="per">per couple · complete 15-hour intensive · hourly rate = fee ÷ 15 hours</div>
       <ol class="steps">
         <li><span class="n">01</span><div><span class="pill">Free Clarity Session · 1 hour</span><p>Meet your therapist and explore the next step together, with no payment or obligation to continue.</p></div></li>
         <li><span class="n">02</span><div><strong>15 hours of guided online sessions</strong><p>If you both choose to proceed, continue privately with guided Imago conversations and relationship work.</p></div></li>
         <li><span class="n">03</span><div><strong>16 hours with your therapist</strong><p>A free one-hour Clarity Session and the full 15-hour intensive.</p></div></li>
       </ol>
-      <a href="#enquire" class="btn btn-dark btn-block" data-interest="online">Start With a Free Clarity Session <span class="arr">↗</span></a>
-      <p class="small">The R41,000 programme fee applies only if you choose to continue after the free Clarity Session. Scheduling and payment terms are confirmed before you commit.</p>
+      <a href="book.html?session=online" class="btn btn-dark btn-block">Start With a Free Clarity Session <span class="arr">↗</span></a>
+      <p class="small">The programme fee applies only if you choose to continue after the free Clarity Session. Scheduling and payment terms are confirmed before you commit.</p>
     </aside>
   </div>
 </section>
@@ -489,62 +517,42 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
       </details>
       <details>
         <summary>What is the difference between in-person and online?</summary>
-        <p>The therapeutic approach is the same. The in-person intensive takes place in Namibia, while the online intensive lets you meet from home. Both begin with a free one-hour Clarity Session and are packaged as 15 hours of sessions.</p>
+        <p>The therapeutic approach is the same. Both are packaged as 15 hours of sessions. The in-person intensive takes place in Namibia, at NAD 14,999 from Monday to Wednesday or NAD 22,999 from Thursday to Saturday. The online intensive lets you meet from home, at NAD 41,999 from Monday to Wednesday or NAD 61,999 from Thursday to Saturday, and begins with a free one-hour Clarity Session.</p>
       </details>
       <details>
         <summary>What about privacy and confidentiality?</summary>
         <p>What you share stays within the therapeutic setting. Your therapist will explain confidentiality, record-keeping and any limits to confidentiality before you begin.</p>
       </details>
       <details>
-        <summary>Is the Clarity Session really free?</summary>
-        <p>Yes. The one-hour Clarity Session comes before your 15 hours and costs nothing. It is simply a chance to meet the therapist and see whether the intensive feels right. There is no obligation to continue, and the fee applies only if you both choose to go ahead.</p>
+        <summary>Is the online Clarity Session really free?</summary>
+        <p>Yes. The one-hour Clarity Session comes before your 15 online hours and costs nothing. It is simply a chance to meet the therapist and see whether the intensive feels right. There is no obligation to continue, and the fee applies only if you both choose to go ahead.</p>
       </details>
       <details>
         <summary>How long is the Intensive?</summary>
-        <p>Both the in-person and online intensives are packaged as 15 hours of sessions, after a free one-hour Clarity Session, so 16 hours with your therapist in total. How those hours are scheduled is confirmed with the therapist before booking.</p>
+        <p>Both the in-person and online intensives are packaged as 15 hours of sessions. The online intensive also begins with a free one-hour Clarity Session. How those hours are scheduled is confirmed with the therapist before booking.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ENQUIRE -->
+<!-- BOOK -->
 <section class="enquire" id="enquire">
-  <div class="wrap split" style="align-items:start">
+  <div class="wrap split" style="align-items:center">
     <div class="copy reveal">
       <p class="eyebrow">Begin the conversation</p>
       <h2>A meaningful next step, together.</h2>
-      <p>Enquire about available dates or ask a question about the Couples Intensive. You do not need to share sensitive relationship details in this initial enquiry.</p>
-      <p>This enquiry prototype prepares a message for you to copy. A real booking form can be connected once the therapist's contact details and booking process are supplied.</p>
+      <p>Choose how you'd like to meet and the times that suit you. Hilze will contact you with availability. Nothing is paid online.</p>
+      <p>You do not need to share sensitive relationship details when you book.</p>
     </div>
-    <form class="form reveal" id="enquiryForm" novalidate>
-      <label>Your name
-        <input type="text" name="name" placeholder="Your name" required autocomplete="name">
-      </label>
-      <label>Email address
-        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-      </label>
-      <label>Interested in
-        <select name="interest" id="interest">
-          <option value="unsure">I'm not sure yet</option>
-          <option value="inperson">In-person Intensive · R16,999</option>
-          <option value="online">Online Private Intensive · R41,000</option>
-          <option value="observed">Observed Session (1 hour) · R2,000</option>
-          <option value="private">Private Session (1 hour) · R3,000</option>
-        </select>
-      </label>
-      <label>Anything else? <span class="opt">(optional)</span>
-        <textarea name="message" placeholder="Preferred dates or a practical question. Please avoid sharing sensitive personal details here."></textarea>
-      </label>
-      <button type="submit" class="btn btn-dark btn-block">Prepare My Enquiry <span class="arr">↗</span></button>
-      <p class="small">Prototype only: no information is transmitted or stored. The form prepares text locally so you can copy and send it.</p>
-      <div class="output" id="output" aria-live="polite">
-        <textarea id="outputText" readonly aria-label="Your prepared enquiry"></textarea>
-        <div class="row">
-          <button type="button" class="btn btn-dark" id="copyBtn">Copy message</button>
-          <a class="btn btn-outline" id="mailBtn" hidden>Open in email ↗</a>
-        </div>
-      </div>
-    </form>
+    <div class="book-card reveal">
+      <ol class="book-steps">
+        <li><span>01</span><div><strong>Choose your session</strong><p>In-person or online intensive, or a single session.</p></div></li>
+        <li><span>02</span><div><strong>Choose your days</strong><p>Monday – Wednesday or Thursday – Saturday.</p></div></li>
+        <li><span>03</span><div><strong>Tell us what suits you</strong><p>The weeks, or the days and times, that work for you.</p></div></li>
+        <li><span>04</span><div><strong>Hilze contacts you</strong><p>She replies with availability.</p></div></li>
+      </ol>
+      <a href="book.html" class="btn btn-dark btn-block">View Availability <span class="arr">↗</span></a>
+    </div>
   </div>
 </section>
 
@@ -561,15 +569,12 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
       <a href="#in-person">In-person</a>
       <a href="#online">Online</a>
       <a href="#reach">Reach</a>
-      <a href="#enquire">Enquire</a>
+      <a href="book.html">View Availability</a>
     </nav>
   </div>
 </footer>
 
 <script>
-// Set this to the therapist's email to enable the "Open in email" button.
-const ENQUIRY_EMAIL = "";
-
 // Sticky nav border
 const nav = document.querySelector("header.nav");
 addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), { passive: true });
@@ -586,61 +591,12 @@ links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
   links.classList.remove("open"); toggle.classList.remove("open"); toggle.setAttribute("aria-expanded", false);
 }));
 
-// Pre-select interest when an enquiry button is clicked
-document.querySelectorAll("[data-interest]").forEach(btn =>
-  btn.addEventListener("click", () => { document.getElementById("interest").value = btn.dataset.interest; })
-);
-
-// Pre-select interest when arriving from another page (e.g. index.html?interest=private#enquire)
-const qInterest = new URLSearchParams(location.search).get("interest");
-if (qInterest && document.querySelector(`#interest option[value="${qInterest}"]`)) {
-  document.getElementById("interest").value = qInterest;
-}
-
 // Scroll reveal
 const io = new IntersectionObserver(entries => entries.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
 }), { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-// Enquiry form: prepares text locally, nothing is sent
-const form = document.getElementById("enquiryForm");
-const output = document.getElementById("output");
-const outText = document.getElementById("outputText");
-const mailBtn = document.getElementById("mailBtn");
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  const d = new FormData(form);
-  const name = (d.get("name") || "").trim();
-  const email = (d.get("email") || "").trim();
-  if (!name || !email) { form.reportValidity(); return; }
-  const interest = form.interest.options[form.interest.selectedIndex].text;
-  const msg = (d.get("message") || "").trim();
-  const text =
-`Hello,
-
-I would like to enquire about the Imago Couples Intensive.
-
-Name: ${name}
-Email: ${email}
-Interested in: ${interest}
-${msg ? "\n" + msg + "\n" : ""}
-Kind regards,
-${name}`;
-  outText.value = text;
-  output.classList.add("show");
-  if (ENQUIRY_EMAIL) {
-    mailBtn.hidden = false;
-    mailBtn.href = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent("Couples Intensive enquiry")}&body=${encodeURIComponent(text)}`;
-  }
-  output.scrollIntoView({ behavior: "smooth", block: "nearest" });
-});
-document.getElementById("copyBtn").addEventListener("click", async e => {
-  try { await navigator.clipboard.writeText(outText.value); }
-  catch { outText.select(); document.execCommand("copy"); }
-  e.target.textContent = "Copied ✓";
-  setTimeout(() => (e.target.textContent = "Copy message"), 2000);
-});
 </script>
 </body>
 </html>

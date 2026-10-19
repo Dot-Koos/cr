@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sessions &amp; Fees · Hilze Strauss · Conscious Relationships</title>
-<meta name="description" content="Imago sessions in Namibia: the 15-hour intensive, an observed one-hour session, or a private one-hour session.">
+<meta name="description" content="Imago sessions in Namibia: the 15-hour intensive (from NAD 14,999), an observed one-hour session, or a private one-hour session.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,11 +80,21 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);bac
 .duration span.s{display:block;font-size:12.5px;line-height:1.45;color:var(--muted);margin-top:2px}
 .price{font-family:var(--serif);font-size:46px;line-height:1}
 .per{font-size:12px;color:var(--muted);margin-top:8px;padding-bottom:20px;border-bottom:1px solid var(--line)}
-.card ul{list-style:none;display:grid;gap:10px;margin:20px 0 30px;flex:1}
+.card ul{list-style:none;display:grid;gap:10px;margin:20px 0 30px;flex:1;align-content:start}
 .card li{display:flex;gap:12px;font-size:13.5px;color:var(--muted)}
 .card li::before{content:"✓";color:var(--accent)}
 
-/* Hourly rate, under each card */
+.tiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+.tier{border:1px solid var(--line);border-radius:4px;padding:14px 12px;background:var(--card)}
+.tier .days{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark)}
+.tier{min-width:0}
+.tier .amt{display:block;font-family:var(--serif);font-size:23px;line-height:1.1;color:var(--ink);margin-top:6px}
+.tier .hr{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.tier .hr b{color:var(--ink);font-weight:600}
+.rateline{font-size:12.5px;color:var(--muted);margin-top:8px}
+.rateline b{color:var(--ink);font-weight:600}
+@media (max-width:420px){.tiers{grid-template-columns:1fr}}
+/* Hourly rate, under the intensive */
 .rate{margin-top:14px;padding:18px 20px;border:1px dashed #d6cdb9;border-radius:4px;background:transparent}
 .rate .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .rate .k{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
@@ -123,6 +133,9 @@ footer{border-top:1px solid var(--line);padding:30px 0}
   .card .desc{min-height:0}
   .intro{margin-top:56px}
 }
+.cur{font-family:var(--sans);font-size:.4em;font-weight:600;letter-spacing:.1em;vertical-align:.7em;margin-right:5px;color:var(--muted)}
+.amt,.price{white-space:nowrap}
+@media (max-width:1060px) and (min-width:961px){.tiers{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -138,7 +151,7 @@ footer{border-top:1px solid var(--line);padding:30px 0}
       <a href="sessions.html" class="current">Sessions</a>
       <a href="space.html">The Space</a>
       <a href="index.html#online">Online Intensive</a>
-      <a href="index.html#enquire" class="btn btn-dark" style="padding:10px 16px">Enquire ↗</a>
+      <a href="book.html" class="btn btn-dark" style="padding:10px 16px">View Availability ↗</a>
     </nav>
   </div>
 </header>
@@ -160,23 +173,27 @@ footer{border-top:1px solid var(--line);padding:30px 0}
         <p class="desc">Our complete in-person Imago Couples Intensive, with only you, your partner and the therapist present.</p>
         <div class="duration">
           <span class="big">15</span>
-          <div><strong>Hours of sessions</strong><span class="s">One-hour Clarity Session free. No obligations. No pressure to continue.</span></div>
+          <div><strong>Hours of sessions</strong><span class="s">Dedicated, focused time for your relationship</span></div>
         </div>
-        <div class="price">R16,999</div>
+        <div class="tiers">
+          <div class="tier"><span class="days">Mon – Wed</span><span class="amt"><span class="cur">NAD</span>14,999</span><span class="hr"><b>NAD 1,000</b> / hour</span></div>
+          <div class="tier"><span class="days">Thu – Sat</span><span class="amt"><span class="cur">NAD</span>22,999</span><span class="hr"><b>NAD 1,533</b> / hour</span></div>
+        </div>
         <div class="per">complete 15-hour intensive</div>
         <ul>
           <li>15 hours of dedicated Imago sessions</li>
+          <li>Choose Monday – Wednesday or Thursday – Saturday</li>
           <li>Only you, your partner and the therapist</li>
-          <li>Personalised, facilitated dialogue</li>
           <li>Held in person in Namibia</li>
         </ul>
-        <a href="index.html?interest=inperson#enquire" class="btn btn-dark btn-block">Enquire About the Intensive ↗</a>
+        <a href="book.html?session=inperson" class="btn btn-dark btn-block">View Availability ↗</a>
       </article>
       <div class="rate">
-        <div class="row"><span class="k">Hourly rate</span><span class="v">R1,133<small>/ hour</small></span></div>
-        <p class="calc">R16,999 ÷ 15 hours = R1,133.27</p>
-        <div class="bar" aria-hidden="true"><span style="width:37.8%"></span></div>
-        <span class="save">R1,867 less per hour than a private session</span>
+        <div class="row"><span class="k">Hourly rate · Mon – Wed</span><span class="v"><span class="cur">NAD</span>1,000<small>/ hour</small></span></div>
+        <p class="calc">NAD 14,999 ÷ 15 hours = NAD 999.93</p>
+        <div class="row" style="margin-top:14px"><span class="k">Hourly rate · Thu – Sat</span><span class="v"><span class="cur">NAD</span>1,533<small>/ hour</small></span></div>
+        <p class="calc">NAD 22,999 ÷ 15 hours = NAD 1,533.27</p>
+        <span class="save">Save NAD 8,000 by choosing Monday to Wednesday</span>
       </div>
     </div>
 
@@ -190,7 +207,7 @@ footer{border-top:1px solid var(--line);padding:30px 0}
           <span class="big">1</span>
           <div><strong>Hour session</strong><span class="s">Led by the same therapist</span></div>
         </div>
-        <div class="price">R2,000</div>
+        <div class="price"><span class="cur">NAD</span>2,099</div>
         <div class="per">per one-hour session</div>
         <ul>
           <li>One-hour Imago session</li>
@@ -198,13 +215,8 @@ footer{border-top:1px solid var(--line);padding:30px 0}
           <li>Observation only with your informed consent</li>
           <li>The observer is bound by confidentiality</li>
         </ul>
-        <a href="index.html?interest=observed#enquire" class="btn btn-outline btn-block">Enquire About an Observed Session ↗</a>
+        <a href="book.html?session=observed" class="btn btn-outline btn-block">View Availability ↗</a>
       </article>
-      <div class="rate">
-        <div class="row"><span class="k">Hourly rate</span><span class="v">R2,000<small>/ hour</small></span></div>
-        <p class="calc">R2,000 ÷ 1 hour = R2,000</p>
-        <div class="bar" aria-hidden="true"><span style="width:66.7%"></span></div>
-      </div>
     </div>
 
     <!-- 3. PRIVATE SESSION -->
@@ -217,7 +229,7 @@ footer{border-top:1px solid var(--line);padding:30px 0}
           <span class="big">1</span>
           <div><strong>Hour session</strong><span class="s">Complete privacy throughout</span></div>
         </div>
-        <div class="price">R3,000</div>
+        <div class="price"><span class="cur">NAD</span>3,000</div>
         <div class="per">per one-hour session</div>
         <ul>
           <li>One-hour Imago session</li>
@@ -225,28 +237,23 @@ footer{border-top:1px solid var(--line);padding:30px 0}
           <li>Book a single session or several</li>
           <li>Maximum privacy</li>
         </ul>
-        <a href="index.html?interest=private#enquire" class="btn btn-outline btn-block">Enquire About a Private Session ↗</a>
+        <a href="book.html?session=private" class="btn btn-outline btn-block">View Availability ↗</a>
       </article>
-      <div class="rate">
-        <div class="row"><span class="k">Hourly rate</span><span class="v">R3,000<small>/ hour</small></span></div>
-        <p class="calc">R3,000 ÷ 1 hour = R3,000</p>
-        <div class="bar" aria-hidden="true"><span style="width:100%"></span></div>
-      </div>
     </div>
   </div>
 
   <div class="note reveal">
     <strong>A note about the observed session:</strong> Your session remains centred on you. The therapist-in-training is present for professional learning, not to lead or take part. The therapist will explain the observer's role, confidentiality and consent before you agree, and you are always free to choose a private session instead.
   </div>
-  <p class="fineprint">Hourly rates are worked out from the fee divided by the hours of sessions. Availability and booking terms will be confirmed by the therapist before booking.</p>
+  <p class="fineprint">Intensive hourly rates are the fee divided by 15 hours of sessions. Availability and booking terms will be confirmed by the therapist before booking.</p>
 </main>
 
 <section class="cta">
   <svg class="rings" viewBox="0 0 300 300" fill="none" stroke="#fff" aria-hidden="true"><circle cx="150" cy="150" r="140"/><circle cx="180" cy="130" r="100"/></svg>
   <div class="wrap">
     <h2>Not sure which <span class="accent">is right for you?</span></h2>
-    <p>Send a short enquiry and the therapist will help you choose. No obligations. No pressure.</p>
-    <a href="index.html#enquire" class="btn">Ask a Question ↗</a>
+    <p>Start a booking request and add your question in the notes. Hilze will help you choose. No obligations. No pressure.</p>
+    <a href="book.html" class="btn">View Availability ↗</a>
   </div>
 </section>
 
@@ -261,7 +268,7 @@ footer{border-top:1px solid var(--line);padding:30px 0}
       <a href="index.html#in-person">In-person</a>
       <a href="sessions.html">Sessions</a>
       <a href="space.html">The Space</a>
-      <a href="index.html#enquire">Enquire</a>
+      <a href="book.html">View Availability</a>
     </nav>
   </div>
 </footer>

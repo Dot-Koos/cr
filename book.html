@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>View Availability · Hilze Strauss · Conscious Relationships</title>
+<meta name="description" content="Choose your session, your days and your dates, and request a booking with Hilze Strauss.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef;
+  --bg-alt:#f4eadb;
+  --bg-sage:#e9eef2;
+  --card:#fffcf7;
+  --primary:#46637b;
+  --primary-2:#3a5468;
+  --sage:#a9bfd2;
+  --sage-light:#dfe7ee;
+  --ochre:#e5bd7c;
+  --accent:#b07a4c;
+  --accent-dark:#94623a;
+  --ink:#2f3439;
+  --muted:#6f6b66;
+  --line:#e6dccb;
+  --serif:"Newsreader", Georgia, serif;
+  --sans:"Inter", system-ui, -apple-system, sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+p{color:var(--muted)}
+.accent{font-style:italic;color:var(--accent)}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;padding:14px 22px;border-radius:999px;border:1px solid var(--primary);cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.btn-dark{background:var(--primary);color:#fff}
+.btn-dark:hover{background:var(--primary-2)}
+.btn-dark:disabled{opacity:.4;cursor:not-allowed}
+.btn-outline{background:transparent;color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-block{width:100%}
+
+/* Header */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.logo img{height:46px;width:auto}
+.logo .name{display:grid;line-height:1.1}
+.logo .name b{font-family:var(--serif);font-weight:400;font-size:21px;letter-spacing:.01em;color:var(--accent-dark)}
+.logo .name small{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:3px}
+.nav-right{display:flex;gap:22px;align-items:center;font-size:13px;white-space:nowrap}
+.nav-right a:hover{color:var(--accent-dark)}
+@media (max-width:620px){.logo img{height:38px}.logo .name b{font-size:18px}.logo .name small{font-size:8.5px;letter-spacing:.16em}.nav-right .hide-sm{display:none}}
+
+/* Intro */
+.intro{padding:56px 0 10px}
+.intro h1{font-size:clamp(40px,5.4vw,60px)}
+.intro p{margin-top:14px;font-size:16px;max-width:560px}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start;padding:30px 0 120px}
+#flow{min-width:0}
+
+/* Steps */
+.step{scroll-margin-top:90px;padding:44px 0;border-top:1px solid var(--line);transition:opacity .35s}
+.step:first-child{border-top:0;padding-top:10px}
+.step.locked{opacity:.35;pointer-events:none}
+.step.hidden,.hidden{display:none !important}
+.step-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px}
+.step-num{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:18px}
+.step h2{font-size:30px}
+.step h2 span{color:var(--muted)}
+.step .hint{font-size:14px;margin:-12px 0 20px}
+
+/* Option cards */
+.opts{display:grid;gap:14px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opts.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.fmt{display:flex;flex-direction:column;padding:24px 22px 22px}
+.fmt .ico{width:44px;height:44px;border-radius:12px;background:var(--bg-sage);display:grid;place-items:center;color:var(--primary);margin-bottom:18px}
+.fmt .ico svg{width:24px;height:24px}
+.fmt .tag{margin-bottom:6px}
+.fmt h3{font-size:23px;padding-right:24px}
+.fmt .desc{flex:1}
+.fmt .from{font-family:var(--serif);font-size:22px;margin-top:16px;line-height:1.1}
+.fmt .from small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--muted);margin-top:4px}
+.opt{position:relative;display:block;cursor:pointer;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:22px 22px 20px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.opt:hover{border-color:#cdbfa8}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt.sel{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),0 18px 36px -26px rgba(40,55,70,.5)}
+.opt:focus-within{outline:2px solid var(--primary);outline-offset:3px}
+.opt.disabled{opacity:.45;cursor:not-allowed}
+.opt .row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.opt h3{font-size:24px}
+.opt .tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:8px}
+.opt .desc{font-size:13.5px;margin-top:6px;max-width:440px}
+.opt .price{font-family:var(--serif);font-size:24px;white-space:nowrap;text-align:right;line-height:1.1}
+.opt .price small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--muted);margin-top:4px}
+.opt .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{font-size:11.5px;color:var(--muted);background:var(--bg-alt);border-radius:999px;padding:4px 10px}
+.opt .check{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;background:var(--card);transition:all .2s}
+.opt.sel .check{background:var(--primary);border-color:var(--primary)}
+.opt.sel .check::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.opt.has-check .row{padding-right:30px}
+#opts-single .row{flex-direction:column;gap:10px}
+#opts-single .price{text-align:left}
+.group-label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:26px 0 12px}
+.group-label:first-child{margin-top:0}
+
+/* Day band cards */
+.band .days{font-family:var(--serif);font-size:26px}
+.band .sub{font-size:13px;margin-top:4px}
+.band .amt{font-family:var(--serif);font-size:30px;margin-top:16px;line-height:1}
+.band .hr{font-size:12.5px;color:var(--muted);margin-top:6px}
+.band .hr b{color:var(--ink);font-weight:600}
+.saving{display:inline-block;margin-top:10px;font-size:11.5px;font-weight:600;color:var(--primary);background:var(--bg-sage);padding:3px 10px;border-radius:999px}
+
+/* Week cards */
+.weeks{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.week{padding:16px 16px 14px;border-radius:12px}
+.week .m{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark)}
+.week .d{font-family:var(--serif);font-size:20px;margin-top:4px;line-height:1.2}
+.week .s{font-size:12px;color:var(--muted);margin-top:2px}
+.week .check{top:12px;right:12px;width:20px;height:20px}
+.week:not(.sel) .s{visibility:hidden}
+.week.disabled .s{visibility:visible}
+.week.sel .m{color:var(--primary)}
+.more{margin-top:14px;font-size:13px;font-weight:600;color:var(--primary);background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* Day + time chips (single sessions) */
+.days-scroll{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.day{flex:0 0 76px;text-align:center;padding:12px 6px;border-radius:12px;scroll-snap-align:start}
+.day .w{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day .n{font-family:var(--serif);font-size:26px;line-height:1.1;margin-top:2px}
+.day .mo{font-size:11px;color:var(--muted)}
+.times{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.time{padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px}
+.time.sel{background:var(--primary);color:#fff;box-shadow:none}
+.note{display:flex;gap:12px;background:var(--bg-sage);border-radius:12px;padding:16px 18px;font-size:13.5px;color:var(--ink);margin-top:18px}
+.note svg{flex:none;width:18px;height:18px;color:var(--primary);margin-top:2px}
+
+/* Details form */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .full{grid-column:1/-1}
+.form label{display:block;font-size:12.5px;font-weight:600}
+.form label input,.form label textarea{display:block;margin-top:7px}
+.form label .opt-t{font-weight:400;color:var(--muted)}
+.form input,.form textarea,.form select{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;font-size:15px;width:100%;transition:border-color .2s}
+.form textarea{min-height:110px;resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--primary)}
+.consent{display:flex !important;grid-template-columns:none;gap:12px !important;align-items:flex-start;font-weight:400 !important;font-size:13.5px !important;color:var(--muted)}
+.consent input{width:18px !important;height:18px;flex:none;margin-top:2px;accent-color:var(--primary)}
+.form .consent.hidden{display:none !important}
+.err{color:#a3442f;font-size:13px;margin-top:10px;min-height:1em}
+
+/* Summary */
+.summary{position:sticky;top:100px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 30px 60px -40px rgba(40,55,70,.45)}
+.summary h3{font-size:24px;margin-bottom:16px}
+.summary dl{display:grid;gap:12px;font-size:13.5px}
+.summary .line{display:flex;justify-content:space-between;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.summary dt{color:var(--muted)}
+.summary dd{text-align:right;font-weight:500}
+.summary dd.empty{color:#b7ad9e;font-weight:400}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 6px}
+.total span{font-size:13px;color:var(--muted)}
+.total b{font-family:var(--serif);font-weight:400;font-size:34px}
+.summary .per{font-size:12px;color:var(--muted);margin-bottom:18px}
+.summary .fine{font-size:12px;margin-top:14px;text-align:center}
+
+/* Mobile bar */
+.mbar{display:none}
+
+/* Done */
+.done{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px 36px;text-align:center}
+.done .tick{width:56px;height:56px;border-radius:50%;background:var(--bg-sage);display:grid;place-items:center;margin:0 auto 18px;color:var(--primary)}
+.done h2{font-size:34px}
+.done p{max-width:460px;margin:12px auto 0}
+.done textarea{width:100%;min-height:200px;margin-top:20px;border:1.5px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);font-size:13px;text-align:left}
+.done .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot a{text-decoration:underline;text-underline-offset:3px}
+
+@media (max-width:1100px) and (min-width:621px){.opts.three{grid-template-columns:1fr}.fmt{display:grid;grid-template-columns:auto 1fr auto;column-gap:18px;align-items:center}.fmt .ico{margin:0;grid-row:span 3}.fmt .from{margin:0;grid-column:3;grid-row:1/span 3;text-align:right}}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr;gap:0;padding-bottom:140px}
+  .summary{display:none}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,252,247,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:12px 20px calc(12px + env(safe-area-inset-bottom));justify-content:space-between;align-items:center;gap:14px}
+  .mbar .t{font-family:var(--serif);font-size:24px;line-height:1.1}
+  .mbar .s{font-size:12px;color:var(--muted);max-width:52vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mbar .btn{padding:12px 20px}
+}
+@media (max-width:620px){
+  .opts.two,.opts.three,.form{grid-template-columns:1fr}
+  .weeks{grid-template-columns:1fr 1fr}
+  .week .d{font-size:18px}
+  .opt .row{flex-direction:column;gap:10px}
+  .opt .price{text-align:left}
+  .step h2{font-size:26px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
+.cur{font-family:var(--sans);font-size:.4em;font-weight:600;letter-spacing:.1em;vertical-align:.7em;margin-right:5px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Hilze Strauss, Conscious Relationships, home">
+      <img src="images/logo-mark.png" alt="" width="94" height="46">
+      <span class="name"><b>Hilze Strauss</b><small>Conscious Relationships</small></span>
+    </a>
+    <nav class="nav-right">
+      <a href="sessions.html" class="hide-sm">Compare sessions</a>
+      <a href="index.html">← Back to site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <p class="eyebrow">View availability</p>
+    <h1>Find your time <span class="accent">together.</span></h1>
+    <p>Choose how you'd like to meet and the times that suit you. Hilze will contact you with availability. Nothing is paid now.</p>
+  </div>
+
+  <div class="layout">
+    <div id="flow">
+      <!-- STEP 1 -->
+      <section class="step" id="step-format">
+        <div class="step-head"><span class="step-num">01</span><h2>How would you like to meet?</h2></div>
+        <div class="opts three" id="opts-format"></div>
+      </section>
+
+      <!-- STEP 1b: single sessions only -->
+      <section class="step hidden" id="step-session">
+        <div class="step-head"><span class="step-num">02</span><h2>Which session? <span>One hour, in person.</span></h2></div>
+        <div class="opts two" id="opts-single"></div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="step locked" id="step-days">
+        <div class="step-head"><span class="step-num">02</span><h2>Which days? <span>Pick your three days.</span></h2></div>
+        <div class="opts two" id="opts-days"></div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="step locked" id="step-date">
+        <div class="step-head"><span class="step-num" id="num-date">03</span><h2 id="date-title">Which week?</h2></div>
+        <p class="hint" id="date-hint"></p>
+        <div id="date-body"></div>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="step locked" id="step-details">
+        <div class="step-head"><span class="step-num" id="num-details">04</span><h2>Your details.</h2></div>
+        <p class="hint">Hilze will contact you with availability. No need to share personal relationship details here.</p>
+        <form class="form" id="details" novalidate>
+          <label>Email<input type="email" name="email" autocomplete="email"></label>
+          <label>Phone or WhatsApp <span class="opt-t">(optional)</span><input type="tel" name="phone" autocomplete="tel"></label>
+          <label class="full">Anything else? <span class="opt-t">(optional)</span><textarea name="message" placeholder="A practical question, or another date that would suit you."></textarea></label>
+          <label class="consent full hidden" id="consent-wrap"><input type="checkbox" name="consent" id="consent"> We understand a therapist-in-training will be present to observe, and we're comfortable with this. Hilze will explain confidentiality and confirm our consent before the session.</label>
+          <div class="full">
+            <button type="submit" class="btn btn-dark btn-block" id="submit">Send My Availability</button>
+            <p class="err" id="err" role="alert"></p>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <aside class="summary" aria-label="Your booking summary">
+      <h3>Your booking</h3>
+      <dl>
+        <div class="line"><dt>Session</dt><dd id="s-session" class="empty">Not chosen</dd></div>
+        <div class="line" id="s-days-row"><dt>Days</dt><dd id="s-days" class="empty">—</dd></div>
+        <div class="line"><dt id="s-date-label">Weeks that suit you</dt><dd id="s-date" class="empty">—</dd></div>
+        <div class="line"><dt>Time with Hilze</dt><dd id="s-hours" class="empty">—</dd></div>
+        <div class="line" id="s-rate-row"><dt>Hourly rate</dt><dd id="s-rate" class="empty">—</dd></div>
+      </dl>
+      <div class="total"><span>Total</span><b id="s-total"><span class="cur">NAD</span>0</b></div>
+      <p class="per" id="s-per">per couple</p>
+      <button class="btn btn-dark btn-block" id="s-next" type="button">Continue</button>
+      <p class="fine">Nothing is charged online. Hilze will contact you with availability.</p>
+    </aside>
+  </div>
+</main>
+
+<div class="mbar">
+  <div><div class="t" id="m-total"><span class="cur">NAD</span>0</div><div class="s" id="m-sub">Choose a session</div></div>
+  <button class="btn btn-dark" id="m-next" type="button">Continue</button>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <span>Hilze Strauss · Conscious Relationships · Imago Couples Intensives</span>
+    <span><a href="index.html">Home</a> · <a href="sessions.html">Sessions</a> · <a href="space.html">The Space</a></span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   SETTINGS: edit these to run the booking page
+   ========================================================= */
+const CONFIG = {
+  // Where booking requests go. Fill in ONE of these:
+  // 1. A Formspree form URL (free at formspree.io), e.g. "https://formspree.io/f/abcdwxyz".
+  //    Requests then arrive in Hilze's inbox automatically.
+  formEndpoint: "",
+  // 2. Or Hilze's email address. The visitor's own email app opens with the request filled in.
+  email: "",
+  // (If both are empty, the page shows the request for the visitor to copy.)
+
+  minDaysAhead: 7,      // earliest bookable date, in days from today
+  weeksAhead: 12,       // how far ahead people can book
+  // Dates Hilze is NOT available (YYYY-MM-DD). Any intensive touching these days is shown as unavailable.
+  unavailable: ["2026-12-24", "2026-12-25", "2026-12-26", "2026-12-31", "2027-01-01"],
+  // One-hour sessions run between 08:00 and 13:00. These are the start times people can tick.
+  times: ["08:00", "09:00", "10:00", "11:00", "12:00"],
+  sessionWindow: "08:00 – 13:00"
+};
+
+const PRODUCTS = {
+  inperson: { name: "In-person Intensive", group: "intensive", hours: 15, where: "In person · Namibia",
+    tag: "Fully private", desc: "Fifteen focused hours with only you, your partner and Hilze, in the calm of the therapy room.",
+    bands: { mw: 14999, ts: 22999 }, chips: ["15 hours", "3 days", "In person"] },
+  online:   { name: "Online Private Intensive", group: "intensive", hours: 15, where: "Online",
+    tag: "From home", desc: "The same 15-hour intensive from your own home. It begins with a free one-hour Clarity Session.",
+    bands: { mw: 41999, ts: 61999 }, clarity: true, chips: ["15 hours", "3 days", "Online", "Free Clarity Session"] },
+  observed: { name: "Observed Session", group: "single", hours: 1, where: "In person",
+    tag: "With an observer", desc: "A one-hour session with a therapist-in-training quietly observing.",
+    price: 2099, consent: true },
+  private:  { name: "Private Session", group: "single", hours: 1, where: "In person",
+    tag: "Fully private", desc: "A one-hour session with only you, your partner and Hilze.",
+    price: 3000 }
+};
+const FORMATS = {
+  online:    { name: "Online", sub: "Online Private Intensive", session: "online", tag: "From home",
+    desc: "15 hours from your own home, starting with a free one-hour Clarity Session.", from: "From <span class='cur'>NAD</span>41,999", per: "per couple · 15 hours",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>' },
+  intensive: { name: "In-person Intensive", sub: "In-person Intensive", session: "inperson", tag: "15 hours · Namibia",
+    desc: "Three focused days with Hilze in the calm of the therapy room.", from: "From <span class='cur'>NAD</span>14,999", per: "per couple · 15 hours",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M13 14.3c.9-.2 1.9-.3 3-.3 3.3 0 5 2.7 5 6"/></svg>' },
+  single:    { name: "In-person Single Session", sub: "", session: null, tag: "1 hour · Namibia",
+    desc: "One hour in person, fully private or with a therapist-in-training observing.", from: "From <span class='cur'>NAD</span>2,099", per: "per session",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>' }
+};
+const BANDS = {
+  mw: { label: "Monday – Wednesday", short: "Mon – Wed", startDow: 1 },
+  ts: { label: "Thursday – Saturday", short: "Thu – Sat", startDow: 4 }
+};
+
+/* ========================================================= */
+const state = { format: null, session: null, band: null, weeks: new Set(), days: new Set(), times: new Set(), done: false };
+const resetPicks = () => { state.weeks = new Set(); state.days = new Set(); state.times = new Set(); };
+const $ = id => document.getElementById(id);
+const num = n => Math.round(n).toLocaleString("en-ZA").replace(/[\s\u00a0\u202f]/g, ",");
+const R = n => "NAD " + num(n);
+const RB = n => `<span class="cur">NAD</span>${num(n)}`;
+const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+const fmt = (d, o) => d.toLocaleDateString("en-GB", o).replace(/,/g, "");
+const today = () => { const t = new Date(); t.setHours(0,0,0,0); return t; };
+const blocked = d => CONFIG.unavailable.includes(iso(d));
+
+function price() {
+  const p = PRODUCTS[state.session];
+  if (!p) return 0;
+  if (p.group === "single") return p.price;
+  return state.band ? p.bands[state.band] : Math.min(...Object.values(p.bands));
+}
+
+/* ---------- Step 1: session cards ---------- */
+function sessionCard(key) {
+  const p = PRODUCTS[key];
+  const priceHtml = p.group === "intensive"
+    ? (p.bands.mw === p.bands.ts ? `${RB(p.bands.mw)}<small>per couple · 15 hours</small>` : `From ${RB(Math.min(p.bands.mw, p.bands.ts))}<small>per couple · 15 hours</small>`)
+    : `${RB(p.price)}<small>per 1-hour session</small>`;
+  const chips = (p.chips || ["1 hour", p.where]).map(c => `<span class="chip">${c}</span>`).join("");
+  return `<label class="opt has-check" data-key="${key}">
+    <input type="radio" name="session" value="${key}">
+    <span class="check" aria-hidden="true"></span>
+    <div class="row">
+      <div><span class="tag">${p.tag}</span><h3>${p.name}</h3><p class="desc">${p.desc}</p></div>
+      <div class="price">${priceHtml}</div>
+    </div>
+    <div class="meta">${chips}</div>
+  </label>`;
+}
+$("opts-format").innerHTML = Object.entries(FORMATS).map(([k, f]) => `<label class="opt fmt has-check" data-key="${k}">
+    <input type="radio" name="format" value="${k}">
+    <span class="check" aria-hidden="true"></span>
+    <span class="ico" aria-hidden="true">${f.icon}</span>
+    <div><span class="tag">${f.tag}</span><h3>${f.name}</h3><p class="desc">${f.desc}</p></div>
+    <div class="from">${f.from}<small>${f.per}</small></div>
+  </label>`).join("");
+$("opts-single").innerHTML = ["observed", "private"].map(sessionCard).join("");
+
+/* ---------- Step 2: day bands ---------- */
+function renderBands() {
+  const p = PRODUCTS[state.session];
+  const vals = Object.values(p.bands);
+  const save = Math.max(...vals) - Math.min(...vals);
+  $("opts-days").innerHTML = Object.entries(BANDS).map(([k, b]) => {
+    const amt = p.bands[k];
+    const cheaper = save > 0 && amt === Math.min(...vals);
+    return `<label class="opt band has-check" data-key="${k}">
+      <input type="radio" name="band" value="${k}">
+      <span class="check" aria-hidden="true"></span>
+      <div class="days">${b.short}</div>
+      <p class="sub">${b.label} · three days in a row</p>
+      <div class="amt">${RB(amt)}</div>
+      <p class="hr"><b>${R(amt / p.hours)}</b> / hour · ${R(amt)} ÷ ${p.hours} hours</p>
+      ${cheaper ? `<span class="saving">Save ${R(save)}</span>` : ""}
+    </label>`;
+  }).join("");
+  bindOpts($("opts-days"), "band", v => { state.band = v; resetPicks(); update(); renderDate(); go("step-date"); });
+  markSel($("opts-days"), state.band);
+}
+
+/* ---------- Step 3: weeks or day + time ---------- */
+let showAllWeeks = false;
+const DOW = [["1","Mon","Monday"],["2","Tue","Tuesday"],["3","Wed","Wednesday"],["4","Thu","Thursday"],["5","Fri","Friday"],["6","Sat","Saturday"]];
+function renderDate() {
+  const p = PRODUCTS[state.session];
+  const body = $("date-body");
+  if (!p) return;
+  const first = addDays(today(), CONFIG.minDaysAhead);
+  const last = addDays(today(), CONFIG.weeksAhead * 7);
+  const note = txt => `<div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>${txt}</span></div>`;
+
+  if (p.group === "intensive") {
+    $("date-title").innerHTML = "Which weeks suit you? <span>Choose as many as you like.</span>";
+    $("date-hint").textContent = state.band ? `${BANDS[state.band].label} over the next ${CONFIG.weeksAhead} weeks. Hilze will contact you to confirm which is available.` : "";
+    if (!state.band) { body.innerHTML = ""; return; }
+    const bd = BANDS[state.band];
+    let d = new Date(first);
+    while (d.getDay() !== bd.startDow) d = addDays(d, 1);
+    const weeks = [];
+    for (; d <= last; d = addDays(d, 7)) {
+      const days = [0, 1, 2].map(i => addDays(d, i));
+      weeks.push({ start: d, end: days[2], off: days.some(blocked) });
+    }
+    const visible = showAllWeeks ? weeks : weeks.slice(0, 6);
+    body.innerHTML = `<div class="weeks">${visible.map(w => {
+      const k = iso(w.start);
+      return `<label class="opt week has-check ${w.off ? "disabled" : ""}" data-key="${k}">
+        <input type="checkbox" name="week" value="${k}" ${w.off ? "disabled" : ""}>
+        <span class="check" aria-hidden="true"></span>
+        <div class="m">${fmt(w.start, { month: "long" })}${w.start.getMonth() !== w.end.getMonth() ? " – " + fmt(w.end, { month: "short" }) : ""}</div>
+        <div class="d">${fmt(w.start, { weekday: "short", day: "numeric" })} – ${fmt(w.end, { weekday: "short", day: "numeric" })}</div>
+        <div class="s">${w.off ? "Not available" : "Suits us"}</div>
+      </label>`;
+    }).join("")}</div>
+    ${!showAllWeeks && weeks.length > 6 ? `<button type="button" class="more" id="moreWeeks">Show later weeks</button>` : ""}
+    ${note(p.clarity ? "Hilze will contact you with availability. Your free one-hour <b>Clarity Session</b> is arranged before your intensive, and if you decide not to continue after it, you pay nothing." : "Hilze will contact you with availability from the weeks you choose.")}`;
+    bindMulti(body.querySelector(".weeks"), "week", state.weeks, () => { update(); });
+    const more = $("moreWeeks");
+    if (more) more.onclick = () => { showAllWeeks = true; renderDate(); };
+  } else {
+    $("date-title").innerHTML = "When are you usually free? <span>Choose all that suit you.</span>";
+    $("date-hint").textContent = `One-hour sessions run Monday to Saturday, between ${CONFIG.sessionWindow}.`;
+    body.innerHTML = `<p class="group-label">Days</p>
+    <div class="times" id="dows">${DOW.map(([k, sh]) => `<label class="opt time" data-key="${k}"><input type="checkbox" name="dow" value="${k}">${sh}</label>`).join("")}</div>
+    <p class="group-label" style="margin-top:22px">Start times</p>
+    <div class="times" id="times">${CONFIG.times.map(t => `<label class="opt time" data-key="${t}"><input type="checkbox" name="tm" value="${t}">${t}</label>`).join("")}</div>
+    ${note("Hilze will contact you with an available day and time that fits.")}`;
+    bindMulti($("dows"), "dow", state.days, () => update());
+    bindMulti($("times"), "tm", state.times, () => update());
+  }
+}
+
+/* ---------- Helpers ---------- */
+function bindOpts(container, name, onPick) {
+  container.querySelectorAll(`input[name="${name}"]`).forEach(inp => inp.addEventListener("change", () => {
+    markSel(container, inp.value); onPick(inp.value);
+  }));
+}
+function bindMulti(container, name, set, onChange) {
+  container.querySelectorAll(`input[name="${name}"]`).forEach(inp => {
+    inp.checked = set.has(inp.value);
+    inp.closest(".opt").classList.toggle("sel", inp.checked);
+    inp.addEventListener("change", () => {
+      inp.checked ? set.add(inp.value) : set.delete(inp.value);
+      inp.closest(".opt").classList.toggle("sel", inp.checked);
+      onChange();
+    });
+  });
+}
+function markSel(container, value) {
+  container.querySelectorAll(".opt").forEach(o => {
+    const on = o.dataset.key === value;
+    o.classList.toggle("sel", on);
+    const inp = o.querySelector("input"); if (inp) inp.checked = on;
+  });
+}
+function go(id) {
+  const el = $(id);
+  if (!el || el.classList.contains("hidden")) return;
+  setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+}
+function dateText() {
+  const p = PRODUCTS[state.session];
+  if (!p) return "";
+  if (p.group === "intensive") {
+    return [...state.weeks].sort().map(k => {
+      const d = new Date(k + "T00:00"), e = addDays(d, 2);
+      return d.getMonth() === e.getMonth() ? `${d.getDate()}–${e.getDate()} ${fmt(e, { month: "short" })}` : `${d.getDate()} ${fmt(d, { month: "short" })}–${e.getDate()} ${fmt(e, { month: "short" })}`;
+    }).join(", ");
+  }
+  const days = DOW.filter(([k]) => state.days.has(k)).map(d => d[1]).join(", ");
+  const times = CONFIG.times.filter(t => state.times.has(t)).join(", ");
+  return [days, times].filter(Boolean).join(" · ");
+}
+function complete() {
+  const p = PRODUCTS[state.session];
+  if (!p) return false;
+  if (p.group === "intensive") return !!(state.band && state.weeks.size);
+  return !!(state.days.size && state.times.size);
+}
+function nextStep() {
+  const p = PRODUCTS[state.session];
+  if (!state.format) return "step-format";
+  if (!p) return "step-session";
+  if (p.group === "intensive" && !state.band) return "step-days";
+  if (!complete()) return "step-date";
+  return "step-details";
+}
+
+/* ---------- Update summary + step locks ---------- */
+function update() {
+  const p = PRODUCTS[state.session];
+  const intensive = p && p.group === "intensive";
+  const single = state.format === "single";
+  $("step-session").classList.toggle("hidden", !single);
+  $("step-days").classList.toggle("hidden", single);
+  $("step-days").classList.toggle("locked", !p);
+  $("step-date").classList.toggle("locked", !p || (intensive && !state.band));
+  $("step-details").classList.toggle("locked", !complete());
+  let n = 0;
+  ["step-format", "step-session", "step-days", "step-date", "step-details"].forEach(id => {
+    const sec = $(id);
+    if (!sec.classList.contains("hidden")) sec.querySelector(".step-num").textContent = String(++n).padStart(2, "0");
+  });
+  $("consent-wrap").classList.toggle("hidden", !(p && p.consent));
+
+  const set = (id, txt, fallback) => { const el = $(id); el.textContent = txt || fallback; el.classList.toggle("empty", !txt); };
+  set("s-session", p ? p.name : (single ? "In-person Single Session" : ""), "Not chosen");
+  $("s-days-row").style.display = p && !intensive ? "none" : "";
+  set("s-days", intensive && state.band ? BANDS[state.band].label : "", "—");
+  $("s-date-label").textContent = p && !intensive ? "Usually free" : "Weeks that suit you";
+  set("s-date", dateText(), "—");
+  set("s-hours", p ? (intensive ? `15 hours${p.clarity ? " + free 1-hour Clarity Session" : ""}` : "1 hour") : "", "—");
+  $("s-rate-row").style.display = p && !intensive ? "none" : "";
+  set("s-rate", intensive && state.band ? `${R(price() / 15)} / hour` : "", "—");
+
+  const total = price();
+  const prefix = p && intensive && !state.band && p.bands.mw !== p.bands.ts ? "From " : "";
+  $("s-total").innerHTML = prefix + RB(total);
+  $("m-total").innerHTML = prefix + RB(total);
+  $("s-per").textContent = p && p.clarity ? "per couple · payable only if you continue after the free Clarity Session" : "per couple";
+  $("m-sub").textContent = p ? [p.name, intensive && state.band ? BANDS[state.band].short : "", dateText()].filter(Boolean).join(" · ") : "Choose a session";
+
+  const label = complete() ? "Go to your details" : "Continue";
+  $("s-next").textContent = label; $("m-next").textContent = label;
+}
+
+/* ---------- Session selection ---------- */
+function pickSession(v, scroll = true) {
+  const changed = state.session !== v;
+  state.session = v;
+  if (changed) { state.band = null; resetPicks(); showAllWeeks = false; }
+  state.format = { online: "online", inperson: "intensive" }[v] || "single";
+  markSel($("opts-format"), state.format);
+  markSel($("step-session"), v);
+  const p = PRODUCTS[v];
+  if (p.group === "intensive") renderBands();
+  renderDate();
+  update();
+  if (scroll) go(p.group === "intensive" ? "step-days" : "step-date");
+}
+function pickFormat(f) {
+  const fm = FORMATS[f];
+  if (fm.session) { pickSession(fm.session); return; }
+  if (state.format !== f) { state.format = f; state.session = null; state.band = null; resetPicks(); }
+  markSel($("opts-format"), f);
+  markSel($("step-session"), state.session);
+  $("date-body").innerHTML = ""; $("date-hint").textContent = "";
+  update();
+  go("step-session");
+}
+document.querySelectorAll('#opts-format input[name="format"]').forEach(inp =>
+  inp.addEventListener("change", () => pickFormat(inp.value))
+);
+document.querySelectorAll('#step-session input[name="session"]').forEach(inp =>
+  inp.addEventListener("change", () => pickSession(inp.value))
+);
+["s-next", "m-next"].forEach(id => $(id).addEventListener("click", () => {
+  const target = nextStep();
+  $(target).scrollIntoView({ behavior: "smooth", block: "start" });
+  if (target === "step-details") setTimeout(() => $("details").email.focus({ preventScroll: true }), 500);
+}));
+
+/* ---------- Pre-select from links, e.g. book.html?session=inperson&days=mw ---------- */
+const q = new URLSearchParams(location.search);
+if (!PRODUCTS[q.get("session")] && FORMATS[q.get("format")]) {
+  const fm = FORMATS[q.get("format")];
+  if (fm.session) pickSession(fm.session, false); else pickFormat(q.get("format"));
+  setTimeout(() => $(nextStep()).scrollIntoView({ block: "start" }), 50);
+}
+if (PRODUCTS[q.get("session")]) {
+  pickSession(q.get("session"), false);
+  if (BANDS[q.get("days")] && PRODUCTS[state.session].group === "intensive") {
+    state.band = q.get("days"); markSel($("opts-days"), state.band); renderDate(); update();
+  }
+  setTimeout(() => $(nextStep()).scrollIntoView({ block: "start" }), 50);
+}
+update();
+
+/* ---------- Submit ---------- */
+$("details").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, err = $("err");
+  const p = PRODUCTS[state.session];
+  err.textContent = "";
+  if (!complete()) { err.textContent = "Please choose your session and dates first."; return; }
+  const em = f.email.value.trim(), ph = f.phone.value.trim();
+  if (!em && !ph) { err.textContent = "Please add an email address or phone number so Hilze can contact you."; f.email.focus(); return; }
+  if (em && !/^\S+@\S+\.\S+$/.test(em)) { err.textContent = "Please check your email address."; f.email.focus(); return; }
+  if (p.consent && !$("consent").checked) { err.textContent = "Please confirm you're comfortable with an observer being present."; return; }
+
+  const intensive = p.group === "intensive";
+  const data = {
+    Session: p.name,
+    Days: intensive ? BANDS[state.band].label : "",
+    [intensive ? "Weeks that suit us" : "Usually free"]: dateText(),
+    "Time with Hilze": intensive ? `15 hours${p.clarity ? " (plus free 1-hour Clarity Session first)" : ""}` : "1 hour",
+    Fee: R(price()) + " per couple",
+    Email: f.email.value.trim(),
+    Phone: f.phone.value.trim(),
+    Message: f.message.value.trim(),
+    "Observer consent": p.consent ? "Yes" : ""
+  };
+  const text = "Hello Hilze,\n\nWe would like to book, and these are the times that suit us. Please let us know what is available.\n\n" +
+    Object.entries(data).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join("\n") +
+    `\n\nKind regards`;
+
+  const btn = $("submit");
+  if (CONFIG.formEndpoint) {
+    btn.disabled = true; btn.textContent = "Sending…";
+    try {
+      const res = await fetch(CONFIG.formEndpoint, {
+        method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ ...data, _subject: `Availability request: ${p.name}`, _replyto: data.Email || undefined })
+      });
+      if (!res.ok) throw new Error();
+      showDone(data, null);
+    } catch {
+      btn.disabled = false; btn.textContent = "Send My Availability";
+      err.textContent = "Sorry, that didn't send. Please try again, or email Hilze directly.";
+    }
+  } else if (CONFIG.email) {
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`Availability request: ${p.name}`)}&body=${encodeURIComponent(text)}`;
+    showDone(data, null, true);
+  } else {
+    showDone(data, text);
+  }
+});
+
+function showDone(data, copyText, viaEmail) {
+  $("flow").innerHTML = `<div class="done">
+    <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
+    <h2>Thank you.</h2>
+    <p>${viaEmail ? "Your email app has opened with your request filled in. Please press send, and Hilze will contact you with availability."
+      : copyText ? "Your request is ready. Copy it below and send it to Hilze, who will contact you with availability."
+      : "Thank you. Hilze will contact you with availability. Nothing has been charged."}</p>
+    ${copyText ? `<textarea readonly id="copyText">${copyText.replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]))}</textarea>
+      <div class="row"><button class="btn btn-dark" id="copyBtn" type="button">Copy request</button><a class="btn btn-outline" href="index.html">Back to site</a></div>`
+      : `<div class="row"><a class="btn btn-outline" href="index.html">Back to site</a></div>`}
+  </div>`;
+  const cb = $("copyBtn");
+  if (cb) cb.onclick = async () => {
+    try { await navigator.clipboard.writeText($("copyText").value); } catch { $("copyText").select(); document.execCommand("copy"); }
+    cb.textContent = "Copied ✓";
+  };
+  $("s-next").style.display = "none"; document.querySelector(".mbar").style.display = "none";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+</body>
+</html>

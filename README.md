@@ -9,6 +9,7 @@ Website for Imago Couples Intensives in Namibia and online.
 | `index.html` | Home page: the intensive, world map, approach, pricing, online intensive, FAQ, enquiry form |
 | `space.html` | The in-person space: photo gallery and details |
 | `sessions.html` | Sessions and fees: the intensive, observed session and private session, with hourly rates |
+| `book.html` | View Availability: choose online, in-person intensive or single session, then days, dates and send a booking request |
 
 Each page is self-contained: its styles and scripts are inside the HTML file.
 
@@ -37,6 +38,12 @@ Edit a file on GitHub (pencil icon) or upload a replacement, then commit. The li
 
 ## Common edits
 
-- **Enquiry email:** in `index.html`, find `const ENQUIRY_EMAIL = "";` and put the email address between the quotes to switch on the "Open in email" button.
+- **Booking requests:** open `book.html` and find the `CONFIG` settings near the bottom. Fill in ONE of:
+  - `formEndpoint`: a free Formspree form URL (create a form at formspree.io with Hilze's email). Requests then arrive in her inbox automatically. **Recommended.**
+  - `email`: Hilze's email address. The visitor's email app opens with the request filled in.
+  - If both are empty, visitors are shown their request to copy and send themselves.
+- **Unavailable dates:** in the same `CONFIG`, add dates to `unavailable` as `"YYYY-MM-DD"`. Any week touching those dates is shown as unavailable.
+- **Single-session times:** change `times` (the start times people can tick) and `sessionWindow` in `CONFIG`. Currently 08:00 – 13:00.
+- **Booking prices:** the `PRODUCTS` list just below `CONFIG` holds the prices used on the booking page.
 - **Map pins:** in `index.html`, each pin has `--x` and `--y` percentages. Nudge these to move a pin.
-- **Prices:** search the HTML files for the amount (for example `R16,999`) and change every occurrence.
+- **Prices:** search the HTML files for the amount (for example `14,999` or `22,999`; all prices are in NAD) and change every occurrence, including the hourly rates next to them (fee ÷ 15 hours).
