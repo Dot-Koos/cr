@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>View Availability · Hilze Strauss · Conscious Relationships</title>
-<meta name="description" content="Choose your session, your days and your dates, and request a booking with Hilze Strauss.">
+<title>Enquire · Hilze Strauss · Conscious Relationships</title>
+<meta name="description" content="Choose your session, your days and your dates, and send an enquiry to Hilze Strauss.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +104,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);bac
 .opt .tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:8px}
 .opt .desc{font-size:13.5px;margin-top:6px;max-width:440px}
 .opt .price{font-family:var(--serif);font-size:24px;white-space:nowrap;text-align:right;line-height:1.1}
+.opt .price .was{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:2px}
 .opt .price small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--muted);margin-top:4px}
 .opt .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .chip{font-size:11.5px;color:var(--muted);background:var(--bg-alt);border-radius:999px;padding:4px 10px}
@@ -119,6 +120,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);bac
 /* Day band cards */
 .band .days{font-family:var(--serif);font-size:26px}
 .band .sub{font-size:13px;margin-top:4px}
+.obs .save-big{display:inline-block;margin-top:14px;font-size:12px;font-weight:600;color:var(--primary);background:var(--bg-sage);padding:4px 11px;border-radius:999px}
+.obs .amt{font-family:var(--serif);font-size:26px;margin-top:14px;line-height:1}
+.obs .amt s{font-size:.6em;color:var(--muted);margin-left:6px}
 .band .amt{font-family:var(--serif);font-size:30px;margin-top:16px;line-height:1}
 .band .hr{font-size:12.5px;color:var(--muted);margin-top:6px}
 .band .hr b{color:var(--ink);font-weight:600}
@@ -229,7 +233,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12px;color:var(
 
 <main class="wrap">
   <div class="intro">
-    <p class="eyebrow">View availability</p>
+    <p class="eyebrow">Enquire</p>
     <h1>Find your time <span class="accent">together.</span></h1>
     <p>Choose how you'd like to meet and the times that suit you. Hilze will contact you with availability. Nothing is paid now.</p>
   </div>
@@ -246,6 +250,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12px;color:var(
       <section class="step hidden" id="step-session">
         <div class="step-head"><span class="step-num">02</span><h2>Which session? <span>One hour, in person.</span></h2></div>
         <div class="opts two" id="opts-single"></div>
+        <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span><b>Why is the discounted session less?</b> A one-hour session is NAD 3,000. If you choose to welcome a therapist-in-training to sit quietly and observe, you pay NAD 2,099. The NAD 901 difference is covered by the trainee, who gains the opportunity to grow their knowledge and experience, helping increase the number of trained practitioners.</span></div>
       </section>
 
       <!-- STEP 2 -->
@@ -255,6 +260,12 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12px;color:var(
       </section>
 
       <!-- STEP 3 -->
+      <section class="step locked hidden" id="step-observer">
+        <div class="step-head"><span class="step-num">03</span><h2>Private, or with a trainee? <span>Optional.</span></h2></div>
+        <div class="opts two" id="opts-observer"></div>
+        <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span><b>About the trainee discount.</b> A therapist-in-training sits quietly in the corner to observe. They do not take part, and they are bound by the same confidentiality as Hilze. The NAD 6,000 discount is covered by the trainee, who gains the opportunity to grow their knowledge and experience. It helps increase the number of trained practitioners. Hilze will explain the observer's role and confirm your consent before you begin.</span></div>
+      </section>
+
       <section class="step locked" id="step-date">
         <div class="step-head"><span class="step-num" id="num-date">03</span><h2 id="date-title">Which week?</h2></div>
         <p class="hint" id="date-hint"></p>
@@ -271,20 +282,21 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12px;color:var(
           <label class="full">Anything else? <span class="opt-t">(optional)</span><textarea name="message" placeholder="A practical question, or another date that would suit you."></textarea></label>
           <label class="consent full hidden" id="consent-wrap"><input type="checkbox" name="consent" id="consent"> We understand a therapist-in-training will be present to observe, and we're comfortable with this. Hilze will explain confidentiality and confirm our consent before the session.</label>
           <div class="full">
-            <button type="submit" class="btn btn-dark btn-block" id="submit">Send My Availability</button>
+            <button type="submit" class="btn btn-dark btn-block" id="submit">Send Enquiry</button>
             <p class="err" id="err" role="alert"></p>
           </div>
         </form>
       </section>
     </div>
 
-    <aside class="summary" aria-label="Your booking summary">
-      <h3>Your booking</h3>
+    <aside class="summary" aria-label="Your enquiry summary">
+      <h3>Your enquiry</h3>
       <dl>
         <div class="line"><dt>Session</dt><dd id="s-session" class="empty">Not chosen</dd></div>
         <div class="line" id="s-days-row"><dt>Days</dt><dd id="s-days" class="empty">—</dd></div>
         <div class="line"><dt id="s-date-label">Weeks that suit you</dt><dd id="s-date" class="empty">—</dd></div>
         <div class="line"><dt>Time with Hilze</dt><dd id="s-hours" class="empty">—</dd></div>
+        <div class="line" id="s-obs-row" style="display:none"><dt>Trainee discount</dt><dd id="s-obs">−NAD 6,000</dd></div>
         <div class="line" id="s-rate-row"><dt>Hourly rate</dt><dd id="s-rate" class="empty">—</dd></div>
       </dl>
       <div class="total"><span>Total</span><b id="s-total"><span class="cur">NAD</span>0</b></div>
@@ -332,15 +344,15 @@ const CONFIG = {
 const PRODUCTS = {
   inperson: { name: "In-person Intensive", group: "intensive", hours: 15, where: "In person · Namibia",
     tag: "Fully private", desc: "Fifteen focused hours with only you, your partner and Hilze, in the calm of the therapy room.",
-    bands: { mw: 14999, ts: 22999 }, chips: ["15 hours", "3 days", "In person"] },
+    bands: { mw: 14999, ts: 22999 }, observerDiscount: 6000, chips: ["15 hours", "3 days", "In person"] },
   online:   { name: "Online Private Intensive", group: "intensive", hours: 15, where: "Online",
     tag: "From home", desc: "The same 15-hour intensive from your own home. It begins with a free one-hour Clarity Session.",
     bands: { mw: 41999, ts: 61999 }, clarity: true, chips: ["15 hours", "3 days", "Online", "Free Clarity Session"] },
-  observed: { name: "Observed Session", group: "single", hours: 1, where: "In person",
-    tag: "With an observer", desc: "A one-hour session with a therapist-in-training quietly observing.",
-    price: 2099, consent: true },
-  private:  { name: "Private Session", group: "single", hours: 1, where: "In person",
-    tag: "Fully private", desc: "A one-hour session with only you, your partner and Hilze.",
+  observed: { name: "Single Discounted Session", group: "single", hours: 1, where: "In person",
+    tag: "Discounted · with a trainee", desc: "The standard NAD 3,000 session, discounted because you choose to welcome a therapist-in-training who quietly observes. The discount is covered by the trainee.",
+    price: 2099, was: 3000, consent: true },
+  private:  { name: "Single Session", group: "single", hours: 1, where: "In person",
+    tag: "Fully private · standard fee", desc: "A one-hour session with only you, your partner and Hilze, at the standard fee.",
     price: 3000 }
 };
 const FORMATS = {
@@ -351,7 +363,7 @@ const FORMATS = {
     desc: "Three focused days with Hilze in the calm of the therapy room.", from: "From <span class='cur'>NAD</span>14,999", per: "per couple · 15 hours",
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M13 14.3c.9-.2 1.9-.3 3-.3 3.3 0 5 2.7 5 6"/></svg>' },
   single:    { name: "In-person Single Session", sub: "", session: null, tag: "1 hour · Namibia",
-    desc: "One hour in person, fully private or with a therapist-in-training observing.", from: "From <span class='cur'>NAD</span>2,099", per: "per session",
+    desc: "One hour in person: a single session, or a single discounted session when you welcome a trainee.", from: "From <span class='cur'>NAD</span>2,099", per: "per session",
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>' }
 };
 const BANDS = {
@@ -361,6 +373,7 @@ const BANDS = {
 
 /* ========================================================= */
 const state = { format: null, session: null, band: null, weeks: new Set(), days: new Set(), times: new Set(), done: false };
+state.observer = false;
 const resetPicks = () => { state.weeks = new Set(); state.days = new Set(); state.times = new Set(); };
 const $ = id => document.getElementById(id);
 const num = n => Math.round(n).toLocaleString("en-ZA").replace(/[\s\u00a0\u202f]/g, ",");
@@ -376,7 +389,8 @@ function price() {
   const p = PRODUCTS[state.session];
   if (!p) return 0;
   if (p.group === "single") return p.price;
-  return state.band ? p.bands[state.band] : Math.min(...Object.values(p.bands));
+  if (!state.band) return Math.min(...Object.values(p.bands));
+  return p.bands[state.band] - (state.observer && p.observerDiscount ? p.observerDiscount : 0);
 }
 
 /* ---------- Step 1: session cards ---------- */
@@ -384,7 +398,7 @@ function sessionCard(key) {
   const p = PRODUCTS[key];
   const priceHtml = p.group === "intensive"
     ? (p.bands.mw === p.bands.ts ? `${RB(p.bands.mw)}<small>per couple · 15 hours</small>` : `From ${RB(Math.min(p.bands.mw, p.bands.ts))}<small>per couple · 15 hours</small>`)
-    : `${RB(p.price)}<small>per 1-hour session</small>`;
+    : `${RB(p.price)}${p.was ? `<s class="was">${R(p.was)}</s>` : ""}<small>${p.was ? `Save ${R(p.was - p.price)} · per 1-hour session` : "per 1-hour session · standard fee"}</small>`;
   const chips = (p.chips || ["1 hour", p.where]).map(c => `<span class="chip">${c}</span>`).join("");
   return `<label class="opt has-check" data-key="${key}">
     <input type="radio" name="session" value="${key}">
@@ -423,8 +437,31 @@ function renderBands() {
       ${cheaper ? `<span class="saving">Save ${R(save)}</span>` : ""}
     </label>`;
   }).join("");
-  bindOpts($("opts-days"), "band", v => { state.band = v; resetPicks(); update(); renderDate(); go("step-date"); });
+  bindOpts($("opts-days"), "band", v => { state.band = v; resetPicks(); renderObserver(); update(); renderDate(); go(PRODUCTS[state.session].observerDiscount ? "step-observer" : "step-date"); });
   markSel($("opts-days"), state.band);
+}
+
+/* ---------- Optional: trainee observer ---------- */
+function renderObserver() {
+  const p = PRODUCTS[state.session];
+  if (!p || !p.observerDiscount || !state.band) { $("opts-observer").innerHTML = ""; return; }
+  const full = p.bands[state.band], off = full - p.observerDiscount;
+  $("opts-observer").innerHTML = `
+    <label class="opt obs has-check" data-key="no">
+      <input type="radio" name="observer" value="no"><span class="check" aria-hidden="true"></span>
+      <span class="tag">Fully private</span><h3>Just the two of you</h3>
+      <p class="desc">Only you, your partner and Hilze in the room.</p>
+      <div class="amt">${RB(full)}</div>
+    </label>
+    <label class="opt obs has-check" data-key="yes">
+      <input type="radio" name="observer" value="yes"><span class="check" aria-hidden="true"></span>
+      <span class="tag">With a trainee observer</span><h3>Welcome a trainee</h3>
+      <p class="desc">A therapist-in-training sits quietly in the corner to observe and learn.</p>
+      <div class="amt">${RB(off)}<s>${R(full)}</s></div>
+      <span class="save-big">Save ${R(p.observerDiscount)}</span>
+    </label>`;
+  bindOpts($("opts-observer"), "observer", v => { state.observer = v === "yes"; update(); go("step-date"); });
+  markSel($("opts-observer"), state.observer ? "yes" : "no");
 }
 
 /* ---------- Step 3: weeks or day + time ---------- */
@@ -546,12 +583,15 @@ function update() {
   $("step-days").classList.toggle("locked", !p);
   $("step-date").classList.toggle("locked", !p || (intensive && !state.band));
   $("step-details").classList.toggle("locked", !complete());
+  const obsOn = !!(p && p.observerDiscount);
+  $("step-observer").classList.toggle("hidden", !obsOn);
+  $("step-observer").classList.toggle("locked", !state.band);
   let n = 0;
-  ["step-format", "step-session", "step-days", "step-date", "step-details"].forEach(id => {
+  ["step-format", "step-session", "step-days", "step-observer", "step-date", "step-details"].forEach(id => {
     const sec = $(id);
     if (!sec.classList.contains("hidden")) sec.querySelector(".step-num").textContent = String(++n).padStart(2, "0");
   });
-  $("consent-wrap").classList.toggle("hidden", !(p && p.consent));
+  $("consent-wrap").classList.toggle("hidden", !(p && (p.consent || (p.observerDiscount && state.observer))));
 
   const set = (id, txt, fallback) => { const el = $(id); el.textContent = txt || fallback; el.classList.toggle("empty", !txt); };
   set("s-session", p ? p.name : (single ? "In-person Single Session" : ""), "Not chosen");
@@ -560,6 +600,9 @@ function update() {
   $("s-date-label").textContent = p && !intensive ? "Usually free" : "Weeks that suit you";
   set("s-date", dateText(), "—");
   set("s-hours", p ? (intensive ? `15 hours${p.clarity ? " + free 1-hour Clarity Session" : ""}` : "1 hour") : "", "—");
+  const obsAmt = p ? (p.observerDiscount && state.observer ? p.observerDiscount : (p.was ? p.was - p.price : 0)) : 0;
+  $("s-obs-row").style.display = obsAmt ? "" : "none";
+  $("s-obs").textContent = obsAmt ? "−" + R(obsAmt) : "";
   $("s-rate-row").style.display = p && !intensive ? "none" : "";
   set("s-rate", intensive && state.band ? `${R(price() / 15)} / hour` : "", "—");
 
@@ -578,7 +621,7 @@ function update() {
 function pickSession(v, scroll = true) {
   const changed = state.session !== v;
   state.session = v;
-  if (changed) { state.band = null; resetPicks(); showAllWeeks = false; }
+  if (changed) { state.band = null; state.observer = false; resetPicks(); showAllWeeks = false; }
   state.format = { online: "online", inperson: "intensive" }[v] || "single";
   markSel($("opts-format"), state.format);
   markSel($("step-session"), v);
@@ -591,7 +634,7 @@ function pickSession(v, scroll = true) {
 function pickFormat(f) {
   const fm = FORMATS[f];
   if (fm.session) { pickSession(fm.session); return; }
-  if (state.format !== f) { state.format = f; state.session = null; state.band = null; resetPicks(); }
+  if (state.format !== f) { state.format = f; state.session = null; state.band = null; state.observer = false; resetPicks(); }
   markSel($("opts-format"), f);
   markSel($("step-session"), state.session);
   $("date-body").innerHTML = ""; $("date-hint").textContent = "";
@@ -620,7 +663,7 @@ if (!PRODUCTS[q.get("session")] && FORMATS[q.get("format")]) {
 if (PRODUCTS[q.get("session")]) {
   pickSession(q.get("session"), false);
   if (BANDS[q.get("days")] && PRODUCTS[state.session].group === "intensive") {
-    state.band = q.get("days"); markSel($("opts-days"), state.band); renderDate(); update();
+    state.band = q.get("days"); markSel($("opts-days"), state.band); renderObserver(); renderDate(); update();
   }
   setTimeout(() => $(nextStep()).scrollIntoView({ block: "start" }), 50);
 }
@@ -636,7 +679,7 @@ $("details").addEventListener("submit", async e => {
   const em = f.email.value.trim(), ph = f.phone.value.trim();
   if (!em && !ph) { err.textContent = "Please add an email address or phone number so Hilze can contact you."; f.email.focus(); return; }
   if (em && !/^\S+@\S+\.\S+$/.test(em)) { err.textContent = "Please check your email address."; f.email.focus(); return; }
-  if (p.consent && !$("consent").checked) { err.textContent = "Please confirm you're comfortable with an observer being present."; return; }
+  if ((p.consent || (p.observerDiscount && state.observer)) && !$("consent").checked) { err.textContent = "Please confirm you're comfortable with an observer being present."; return; }
 
   const intensive = p.group === "intensive";
   const data = {
@@ -644,13 +687,14 @@ $("details").addEventListener("submit", async e => {
     Days: intensive ? BANDS[state.band].label : "",
     [intensive ? "Weeks that suit us" : "Usually free"]: dateText(),
     "Time with Hilze": intensive ? `15 hours${p.clarity ? " (plus free 1-hour Clarity Session first)" : ""}` : "1 hour",
+    "Trainee observer": p.observerDiscount ? (state.observer ? `Yes, welcome a trainee (save ${R(p.observerDiscount)})` : "No, fully private") : "",
     Fee: R(price()) + " per couple",
     Email: f.email.value.trim(),
     Phone: f.phone.value.trim(),
     Message: f.message.value.trim(),
-    "Observer consent": p.consent ? "Yes" : ""
+    "Observer consent": p.consent ? `Yes (trainee discount: ${R(p.was - p.price)} off the standard ${R(p.was)})` : ""
   };
-  const text = "Hello Hilze,\n\nWe would like to book, and these are the times that suit us. Please let us know what is available.\n\n" +
+  const text = "Hello Hilze,\n\nWe would like to enquire about a session, and these are the times that suit us. Please let us know what is available.\n\n" +
     Object.entries(data).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join("\n") +
     `\n\nKind regards`;
 
@@ -660,16 +704,16 @@ $("details").addEventListener("submit", async e => {
     try {
       const res = await fetch(CONFIG.formEndpoint, {
         method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ ...data, _subject: `Availability request: ${p.name}`, _replyto: data.Email || undefined })
+        body: JSON.stringify({ ...data, _subject: `Enquiry: ${p.name}`, _replyto: data.Email || undefined })
       });
       if (!res.ok) throw new Error();
       showDone(data, null);
     } catch {
-      btn.disabled = false; btn.textContent = "Send My Availability";
+      btn.disabled = false; btn.textContent = "Send Enquiry";
       err.textContent = "Sorry, that didn't send. Please try again, or email Hilze directly.";
     }
   } else if (CONFIG.email) {
-    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`Availability request: ${p.name}`)}&body=${encodeURIComponent(text)}`;
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`Enquiry: ${p.name}`)}&body=${encodeURIComponent(text)}`;
     showDone(data, null, true);
   } else {
     showDone(data, text);
@@ -680,11 +724,11 @@ function showDone(data, copyText, viaEmail) {
   $("flow").innerHTML = `<div class="done">
     <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
     <h2>Thank you.</h2>
-    <p>${viaEmail ? "Your email app has opened with your request filled in. Please press send, and Hilze will contact you with availability."
-      : copyText ? "Your request is ready. Copy it below and send it to Hilze, who will contact you with availability."
-      : "Thank you. Hilze will contact you with availability. Nothing has been charged."}</p>
+    <p>${viaEmail ? "Your email app has opened with your enquiry filled in. Please press send, and Hilze will contact you with availability."
+      : copyText ? "Your enquiry is ready. Copy it below and send it to Hilze, who will contact you with availability."
+      : "Your enquiry has been sent. Hilze will contact you with availability. Nothing has been charged."}</p>
     ${copyText ? `<textarea readonly id="copyText">${copyText.replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]))}</textarea>
-      <div class="row"><button class="btn btn-dark" id="copyBtn" type="button">Copy request</button><a class="btn btn-outline" href="index.html">Back to site</a></div>`
+      <div class="row"><button class="btn btn-dark" id="copyBtn" type="button">Copy enquiry</button><a class="btn btn-outline" href="index.html">Back to site</a></div>`
       : `<div class="row"><a class="btn btn-outline" href="index.html">Back to site</a></div>`}
   </div>`;
   const cb = $("copyBtn");

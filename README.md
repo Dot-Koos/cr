@@ -9,7 +9,7 @@ Website for Imago Couples Intensives in Namibia and online.
 | `index.html` | Home page: the intensive, world map, approach, pricing, online intensive, FAQ, enquiry form |
 | `space.html` | The in-person space: photo gallery and details |
 | `sessions.html` | Sessions and fees: the intensive, observed session and private session, with hourly rates |
-| `book.html` | View Availability: choose online, in-person intensive or single session, then days, dates and send a booking request |
+| `book.html` | Enquire: choose online, in-person intensive or single session, then days, dates and send a booking request |
 
 Each page is self-contained: its styles and scripts are inside the HTML file.
 

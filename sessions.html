@@ -98,12 +98,14 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);bac
 .rate{margin-top:14px;padding:18px 20px;border:1px dashed #d6cdb9;border-radius:4px;background:transparent}
 .rate .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .rate .k{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.rate .v{font-family:var(--serif);font-size:26px;line-height:1}
+.rate .v{font-family:var(--serif);font-size:22px;line-height:1;white-space:nowrap}
 .rate .v small{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:3px}
 .rate .calc{font-size:12px;color:var(--muted);margin-top:4px}
 .bar{height:6px;background:var(--bg-alt);border-radius:6px;margin-top:12px;overflow:hidden}
 .bar span{display:block;height:100%;background:var(--accent);border-radius:6px}
 .featured-col .bar span{background:var(--primary)}
+.price s{font-family:var(--sans);font-size:.3em;color:var(--muted);margin-left:10px;vertical-align:.5em}
+.card .save{align-self:flex-start}
 .save{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:var(--primary);background:var(--bg-sage);padding:4px 10px;border-radius:20px}
 
 .note{max-width:900px;margin:44px auto 0;background:var(--card);border-left:3px solid var(--accent);padding:20px 26px;font-size:13.5px;color:var(--muted)}
@@ -151,7 +153,7 @@ footer{border-top:1px solid var(--line);padding:30px 0}
       <a href="sessions.html" class="current">Sessions</a>
       <a href="space.html">The Space</a>
       <a href="index.html#online">Online Intensive</a>
-      <a href="book.html" class="btn btn-dark" style="padding:10px 16px">View Availability ↗</a>
+      <a href="book.html" class="btn btn-dark" style="padding:10px 16px">Enquire ↗</a>
     </nav>
   </div>
 </header>
@@ -185,8 +187,9 @@ footer{border-top:1px solid var(--line);padding:30px 0}
           <li>Choose Monday – Wednesday or Thursday – Saturday</li>
           <li>Only you, your partner and the therapist</li>
           <li>Held in person in Namibia</li>
+          <li>Optional: save NAD 6,000 by welcoming a trainee observer</li>
         </ul>
-        <a href="book.html?session=inperson" class="btn btn-dark btn-block">View Availability ↗</a>
+        <a href="book.html?session=inperson" class="btn btn-dark btn-block">Enquire ↗</a>
       </article>
       <div class="rate">
         <div class="row"><span class="k">Hourly rate · Mon – Wed</span><span class="v"><span class="cur">NAD</span>1,000<small>/ hour</small></span></div>
@@ -197,53 +200,55 @@ footer{border-top:1px solid var(--line);padding:30px 0}
       </div>
     </div>
 
-    <!-- 2. OBSERVED SESSION -->
+    <!-- 2. SINGLE DISCOUNTED SESSION -->
     <div class="col reveal">
       <article class="card">
-        <span class="tag">With an observer · 1 hour</span>
-        <h2>Observed Session</h2>
-        <p class="desc">A one-hour session with a therapist-in-training quietly present to observe, as part of their professional training.</p>
+        <span class="tag">Discounted · with a trainee · 1 hour</span>
+        <h2>Single Discounted Session</h2>
+        <p class="desc">The same one-hour session at a lower fee, because you choose to welcome a therapist-in-training who quietly observes.</p>
         <div class="duration">
           <span class="big">1</span>
           <div><strong>Hour session</strong><span class="s">Led by the same therapist</span></div>
         </div>
-        <div class="price"><span class="cur">NAD</span>2,099</div>
-        <div class="per">per one-hour session</div>
+        <div class="price"><span class="cur">NAD</span>2,099<s>NAD 3,000</s></div>
+        <span class="save" style="margin-top:12px">Save NAD 901 when you welcome a trainee</span>
+        <div class="per">per one-hour session · discounted from the standard NAD 3,000</div>
         <ul>
-          <li>One-hour Imago session</li>
-          <li>A therapist-in-training observes only</li>
+          <li>One-hour Imago session, led by Hilze</li>
+          <li>The discount is covered by the trainee</li>
+          <li>The trainee observes only and does not take part</li>
           <li>Observation only with your informed consent</li>
           <li>The observer is bound by confidentiality</li>
         </ul>
-        <a href="book.html?session=observed" class="btn btn-outline btn-block">View Availability ↗</a>
+        <a href="book.html?session=observed" class="btn btn-outline btn-block">Enquire ↗</a>
       </article>
     </div>
 
-    <!-- 3. PRIVATE SESSION -->
+    <!-- 3. SINGLE SESSION -->
     <div class="col reveal">
       <article class="card">
-        <span class="tag">Fully private · 1 hour</span>
-        <h2>Private Session</h2>
-        <p class="desc">A one-hour session with only you, your partner and the therapist in the room.</p>
+        <span class="tag">Fully private · standard fee · 1 hour</span>
+        <h2>Single Session</h2>
+        <p class="desc">A one-hour session with only you, your partner and the therapist in the room, at the standard fee.</p>
         <div class="duration">
           <span class="big">1</span>
           <div><strong>Hour session</strong><span class="s">Complete privacy throughout</span></div>
         </div>
         <div class="price"><span class="cur">NAD</span>3,000</div>
-        <div class="per">per one-hour session</div>
+        <div class="per">per one-hour session · standard fee</div>
         <ul>
           <li>One-hour Imago session</li>
           <li>Only you, your partner and the therapist</li>
-          <li>Book a single session or several</li>
+          <li>One session or several</li>
           <li>Maximum privacy</li>
         </ul>
-        <a href="book.html?session=private" class="btn btn-outline btn-block">View Availability ↗</a>
+        <a href="book.html?session=private" class="btn btn-outline btn-block">Enquire ↗</a>
       </article>
     </div>
   </div>
 
   <div class="note reveal">
-    <strong>A note about the observed session:</strong> Your session remains centred on you. The therapist-in-training is present for professional learning, not to lead or take part. The therapist will explain the observer's role, confidentiality and consent before you agree, and you are always free to choose a private session instead.
+    <strong>Why is the discounted session less?</strong> A one-hour session is NAD 3,000. If you choose to welcome a therapist-in-training to sit quietly in the corner and observe, you pay NAD 2,099 instead. The NAD 901 difference is covered by the trainee, who gains the opportunity to grow their knowledge and experience. It helps increase the number of trained practitioners. The choice is always yours: your session stays centred on you, the trainee does not take part, and Hilze explains their role, confidentiality and consent before you agree.
   </div>
   <p class="fineprint">Intensive hourly rates are the fee divided by 15 hours of sessions. Availability and booking terms will be confirmed by the therapist before booking.</p>
 </main>
@@ -252,8 +257,8 @@ footer{border-top:1px solid var(--line);padding:30px 0}
   <svg class="rings" viewBox="0 0 300 300" fill="none" stroke="#fff" aria-hidden="true"><circle cx="150" cy="150" r="140"/><circle cx="180" cy="130" r="100"/></svg>
   <div class="wrap">
     <h2>Not sure which <span class="accent">is right for you?</span></h2>
-    <p>Start a booking request and add your question in the notes. Hilze will help you choose. No obligations. No pressure.</p>
-    <a href="book.html" class="btn">View Availability ↗</a>
+    <p>Send an enquiry and add your question in the notes. Hilze will help you choose. No obligations. No pressure.</p>
+    <a href="book.html" class="btn">Enquire ↗</a>
   </div>
 </section>
 
@@ -268,7 +273,7 @@ footer{border-top:1px solid var(--line);padding:30px 0}
       <a href="index.html#in-person">In-person</a>
       <a href="sessions.html">Sessions</a>
       <a href="space.html">The Space</a>
-      <a href="book.html">View Availability</a>
+      <a href="book.html">Enquire</a>
     </nav>
   </div>
 </footer>
