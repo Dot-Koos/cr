@@ -237,6 +237,25 @@ details p{font-size:14px;padding:0 40px 26px 0}
 .book-steps strong{display:block;font-weight:600;font-size:14.5px}
 .book-steps p{font-size:13.5px;margin-top:2px}
 
+/* Reviews */
+.reviews{padding-top:30px}
+.reviews-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.reviews-head h2 .accent{display:block}
+.reviews-head p{max-width:340px;font-size:14px}
+.carousel{margin-top:44px;position:relative}
+.track{--per:3;--gap:22px;overflow:hidden;padding:2px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+@media (max-width:960px){.track{--per:2}}
+@media (max-width:620px){.track{--per:1}}
+.belt{display:flex;gap:var(--gap);width:max-content;animation:slide var(--dur,40s) linear infinite}
+.track:hover .belt{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(var(--dist,-50%))}}
+.review{flex:0 0 var(--w,320px);background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 30px 34px;display:flex;flex-direction:column;gap:18px;min-height:240px}
+.review .mark{font-family:var(--serif);font-size:70px;line-height:.5;color:var(--ochre);height:28px}
+.review blockquote{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--ink)}
+.review.placeholder blockquote{color:var(--muted);font-style:italic}
+@media (prefers-reduced-motion:reduce){.belt{animation:none}.track{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
+.reviews .fineprint{text-align:left;margin-top:20px}
+
 /* Footer */
 footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
@@ -392,6 +411,45 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0}
       <li class="reveal"><i>04</i><strong>United Kingdom</strong><span>Clients based in the UK</span></li>
       <li class="reveal"><i>05</i><strong>Netherlands</strong><span>[City or clients in the Netherlands]</span></li>
     </ul>
+  </div>
+</section>
+
+<!-- REVIEWS: replace each placeholder with a real review (with the couple's permission) -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head reveal">
+      <div>
+        <p class="eyebrow">In their words</p>
+        <h2>What couples <span class="accent">have shared.</span></h2>
+      </div>
+      <p>Shared with permission, in couples' own words.</p>
+    </div>
+    <div class="carousel reveal" aria-roledescription="carousel" aria-label="Reviews">
+      <div class="track" id="reviewTrack">
+        <div class="belt" id="reviewBelt">
+        <figure class="review placeholder" role="group" aria-roledescription="slide" aria-label="1 of 5">
+          <span class="mark" aria-hidden="true">“</span>
+          <blockquote>[Paste a real review here, shared with permission.]</blockquote>
+        </figure>
+        <figure class="review placeholder" role="group" aria-roledescription="slide" aria-label="2 of 5">
+          <span class="mark" aria-hidden="true">“</span>
+          <blockquote>[Paste a real review here, shared with permission.]</blockquote>
+        </figure>
+        <figure class="review placeholder" role="group" aria-roledescription="slide" aria-label="3 of 5">
+          <span class="mark" aria-hidden="true">“</span>
+          <blockquote>[Paste a real review here, shared with permission.]</blockquote>
+        </figure>
+        <figure class="review placeholder" role="group" aria-roledescription="slide" aria-label="4 of 5">
+          <span class="mark" aria-hidden="true">“</span>
+          <blockquote>[Paste a real review here, shared with permission.]</blockquote>
+        </figure>
+        <figure class="review placeholder" role="group" aria-roledescription="slide" aria-label="5 of 5">
+          <span class="mark" aria-hidden="true">“</span>
+          <blockquote>[Paste a real review here, shared with permission.]</blockquote>
+        </figure>
+              </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -598,6 +656,24 @@ const io = new IntersectionObserver(entries => entries.forEach(e => {
 }), { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
+
+// Reviews: continuous sliding loop (3 / 2 / 1 visible, pauses on hover)
+(() => {
+  const track = document.getElementById("reviewTrack"), belt = document.getElementById("reviewBelt");
+  if (!track || !belt) return;
+  const originals = [...belt.children];
+  originals.forEach(el => { const c = el.cloneNode(true); c.setAttribute("aria-hidden", "true"); belt.appendChild(c); });
+  function size() {
+    const cs = getComputedStyle(track);
+    const per = parseInt(cs.getPropertyValue("--per")) || 3, gap = parseFloat(cs.getPropertyValue("--gap")) || 22;
+    const w = (track.clientWidth - (per - 1) * gap) / per;
+    belt.style.setProperty("--w", w + "px");
+    belt.style.setProperty("--dist", -(originals.length * (w + gap)) + "px");
+    belt.style.setProperty("--dur", originals.length * 8 + "s");   // about 8 seconds per review
+  }
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(size, 120); });
+  size();
+})();
 </script>
 </body>
 </html>

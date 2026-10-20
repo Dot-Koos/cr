@@ -45,5 +45,6 @@ Edit a file on GitHub (pencil icon) or upload a replacement, then commit. The li
 - **Unavailable dates:** in the same `CONFIG`, add dates to `unavailable` as `"YYYY-MM-DD"`. Any week touching those dates is shown as unavailable.
 - **Single-session times:** change `times` (the start times people can tick) and `sessionWindow` in `CONFIG`. Currently 08:00 – 13:00.
 - **Booking prices:** the `PRODUCTS` list just below `CONFIG` holds the prices used on the booking page.
+- **Reviews:** in `index.html`, find `<!-- REVIEWS -->`. Each review is one `<figure class="review placeholder">` in the sliding row. Replace the text in `<blockquote>` with the real review and remove the word `placeholder` from its class. To add a review, copy a whole `<figure>…</figure>` block; to remove one, delete it. The sliding loop adjusts by itself. Only use reviews you have permission to share.
 - **Map pins:** in `index.html`, each pin has `--x` and `--y` percentages. Nudge these to move a pin.
 - **Prices:** search the HTML files for the amount (for example `14,999` or `22,999`; all prices are in NAD) and change every occurrence, including the hourly rates next to them (fee ÷ 15 hours).
