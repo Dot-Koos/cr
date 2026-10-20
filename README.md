@@ -17,7 +17,8 @@ Each page is self-contained: its styles and scripts are inside the HTML file.
 
 | File | Used for |
 |---|---|
-| `logo-full.png` | Footer logo |
+| `logo-full.png` | Footer logo (birds artwork, no lettering) |
+| `hero-art.png` | Large birds artwork at the top of the home page |
 | `logo-mark.png` | Header logo (the birds) |
 | `favicon.png` | Browser tab icon |
 | `world-map.jpg` | "Connection, across continents" map |

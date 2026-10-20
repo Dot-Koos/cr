@@ -49,13 +49,14 @@ p{color:var(--muted)}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
 .logo{display:flex;align-items:center;gap:12px;color:var(--ink)}
-.logo img{height:46px;width:auto}
+.logo img{height:52px;width:auto}
 .logo .name{display:grid;line-height:1.1}
 .logo .name b{font-family:var(--serif);font-weight:400;font-size:21px;letter-spacing:.01em;color:var(--accent-dark)}
 .logo .name small{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:3px}
 .foot-logo{display:inline-flex;flex-direction:column;align-items:center}
-.foot-logo img{height:110px;width:auto}
-.foot-logo span{display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:6px;text-align:center}
+.foot-logo img{height:100px;width:auto}
+.foot-logo b{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--accent-dark);margin-top:8px}
+.foot-logo span{display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-top:2px;text-align:center}
 @media (max-width:520px){.logo img{height:38px}.logo .name b{font-size:18px}.logo .name small{font-size:8.5px;letter-spacing:.16em}}
 .nav-links{display:flex;align-items:center;white-space:nowrap;gap:28px;font-size:13px}
 .nav-links a.current{color:var(--accent-dark)}
@@ -145,7 +146,7 @@ footer{border-top:1px solid var(--line);padding:30px 0}
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="logo" aria-label="Hilze Strauss, Conscious Relationships, home">
-      <img src="images/logo-mark.png" alt="" width="94" height="46">
+      <img src="images/logo-mark.png" alt="" width="87" height="52">
       <span class="name"><b>Hilze Strauss</b><small>Conscious Relationships</small></span>
     </a>
     <nav class="nav-links">
@@ -265,7 +266,8 @@ footer{border-top:1px solid var(--line);padding:30px 0}
 <footer>
   <div class="wrap foot">
     <a href="index.html" class="foot-logo" aria-label="Hilze Strauss, Conscious Relationships, home">
-      <img src="images/logo-full.png" alt="Hilze Strauss" width="126" height="96">
+      <img src="images/logo-full.png" alt="" width="168" height="100">
+      <b>Hilze Strauss</b>
       <span>Conscious Relationships</span>
     </a>
     <span>Imago Couples Intensives · Namibia & online</span>
